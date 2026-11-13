@@ -826,3 +826,15 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .pv .g.in { clip-path: none; opacity: 1; transform: none; }
 .fade { transform: translateY(24px); }
 @media (prefers-reduced-motion: reduce) { .pv .g { opacity: 1; transform: none; } }
+
+/* About copy in the footer */
+.contact__about { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--pad); margin-top: clamp(80px, 10vw, 150px); scroll-margin-top: 80px; }
+.contact__about .eyebrow { grid-column: 1 / span 3; color: #9a9a9a; }
+.contact__about-body { grid-column: 4 / span 7; color: #fff; font-size: clamp(17px, 1.5vw, 22px); line-height: 1.55; letter-spacing: -0.01em; }
+.contact__about-body p { margin: 0 0 1.1em; }
+.contact__about + .contact__grid { margin-top: clamp(50px, 6vw, 90px); }
+.statement { padding-bottom: clamp(80px, 12vw, 180px); }
+@media (max-width: 900px) {
+  .contact__about { grid-template-columns: 1fr; gap: 14px; }
+  .contact__about .eyebrow, .contact__about-body { grid-column: 1 / -1; }
+}
