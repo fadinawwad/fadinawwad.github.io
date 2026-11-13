@@ -271,7 +271,7 @@ PROJECTS = [
 ]
 
 # Archived — hidden from the site; move an id back into PROJECTS by deleting it here
-ARCHIVED = {"logos", "madanet", "eff", "elle", "trust", "insurance", "naql", "jmi", "samsungprint", "wow", "ajras", "illus", "font", "photo"}
+ARCHIVED = {"hilton", "logos", "madanet", "eff", "elle", "trust", "insurance", "naql", "jmi", "samsungprint", "wow", "ajras", "illus", "font", "photo"}
 PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
@@ -283,7 +283,7 @@ HERO_CARDS = ["hero/midtown-01.webp", "hero/becks-01.webp", "hero/oreo-01.webp",
 
 WORDS = [
     dict(word="</>", title="Built, not just drawn.", text="Design that ships — Figma systems, components and prototypes that developers can actually build.",
-         imgs=["dfin/dfin-03.webp", "sandals/sandals-02.webp", "hgv/hgv-01.webp", "dfin/dfin-12.webp"]),
+         imgs=["dfin/dfin-03.webp", "sandals/sandals-02.webp", "midtown/midtown-01.webp", "dfin/dfin-12.webp"]),
     dict(word="UI/UX", title="Made for people.", text="Websites, mobile and app experiences designed around real behaviour — clear, fast and a little bit delightful.",
          imgs=["progress/progress-01.webp", "midtown/midtown-01.webp", "progress/progress-03.webp", "progress/progress-02.webp"]),
     dict(word="TL;DR", title="Clarity first.", text="Complex products, made simple. I cut the noise so people get it in seconds.",
@@ -312,7 +312,7 @@ WALL_COLS = [
     (18, [("dfin/dfin-16.webp", .58, "dfin"), ("oreo/oreo-01.webp", .42, "oreo")], 1.15),
     (24, [("sandals/sandals-01.webp", .62, "sandals"), ("samsung/samsung-04.webp", .38, "samsung")], .9),
     (16, [("progress/progress-02.webp", .4, "progress"), ("oreo/oreo-04.webp", .6, "oreo")], 1.25),
-    (26, [("hgv/hgv-01.webp", .6, "hilton"), ("dfin/dfin-13.webp", .4, "dfin")], .85),
+    (26, [("sandals/sandals-02.webp", .6, "sandals"), ("dfin/dfin-13.webp", .4, "dfin")], .85),
     (18, [("birkenstock/birkenstock-02.webp", .55, "birkenstock"), ("wingstop/wingstop-01.webp", .45, "wingstop")], 1.2),
     (22, [("dfin/dfin-03.webp", .42, "dfin"), ("midtown/midtown-01.webp", .58, "midtown")], .95),
     (16, [("amman/amman-01.webp", .4, "amman"), ("oreo/oreo-06.webp", .6, "oreo")], 1.3),
