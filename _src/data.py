@@ -276,7 +276,7 @@ PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
-FEATURED_ORDER = ["dfin", "sandals", "progress", "wingstop", "midtown", "oreo", "primal", "budweiser"]
+FEATURED_ORDER = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser"]
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
 HERO_CARDS = ["hero/midtown-01.webp", "hero/becks-01.webp", "hero/oreo-01.webp", "hero/birkenstock.webp", "hero/amman-01.webp"]  # same fan as the coming-soon page; middle card sits on top
