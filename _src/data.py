@@ -209,7 +209,7 @@ PROJECTS = [
          meta=[("Discipline", "Art Direction, Design"), ("Scope", "Poster, brochure, print"), ("Market", "Jordan"), ("Languages", "Arabic, English")],
          cover="jmi/jmi-01.webp",
          gallery=[("jmi/jmi-01.webp", 6), ("jmi/jmi-02.webp", 6), ("jmi/jmi-03.webp", "c8"), ("jmi/jmi-04.webp", 4), ("jmi/jmi-05.webp", 4), ("jmi/jmi-06.webp", 4), ("jmi/jmi-07.webp", "c6")]),
-    dict(id="nivea", featured=False, title="NIVEA MicellAIR", client="NIVEA", type="Launch Film", cat="campaign",
+    dict(id="nivea", featured=False, title="Nivea", client="NIVEA", type="Launch Film", cat="campaign",
          lead="New MicellAIR Rose Water \u2014 a launch film that follows one fresh face from morning to night.",
          desc="A launch film for NIVEA MicellAIR Rose Water. The story follows a woman through her day \u2014 from the mirror to the city and back \u2014 then dives into rose petals and water to show the product\u2019s rose-water formula and how it removes even waterproof makeup, before landing on the new range.",
          meta=[("Discipline", "Creative Direction, Film"), ("Scope", "Launch film"), ("Product", "MicellAIR Rose Water"), ("Format", "Video")],
@@ -276,7 +276,7 @@ PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
-FEATURED_ORDER = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser"]
+FEATURED_ORDER = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea"]
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
 HERO_CARDS = ["hero/midtown-01.webp", "hero/becks-01.webp", "hero/oreo-01.webp", "hero/birkenstock.webp", "hero/amman-01.webp"]  # same fan as the coming-soon page; middle card sits on top
