@@ -272,7 +272,8 @@ PROJECTS = [
 
 # Archived — hidden from the site; move an id back into PROJECTS by deleting it here
 # Bounteous work — set SHOW_BOUNTEOUS = True to bring it all back (projects, cards and the
-# Progress / DFIN feature sections). The Good stuff order then follows FEATURED_ORDER_ALL.
+# Progress / DFIN feature sections, shown alongside Masarat and Mada, which stay).
+# The Good stuff order then follows FEATURED_ORDER_ALL.
 SHOW_BOUNTEOUS = False
 BOUNTEOUS = {"dfin", "sandals", "progress", "wingstop", "midtown"}
 ARCHIVED = {"hilton", "logos", "madanet", "eff", "elle", "trust", "insurance", "naql", "jmi", "samsungprint", "wow", "ajras", "illus", "font", "photo"}
