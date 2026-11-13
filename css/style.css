@@ -790,3 +790,4 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .contact .fx--light .fx__ic { background: #fff; color: var(--accent); }
 .contact .fx--light:hover .fx__txt, .contact .fx--light:focus-visible .fx__txt { color: #fff; }
 .contact .fx--light:hover .fx__ic, .contact .fx--light:focus-visible .fx__ic { background: transparent; color: #fff; }
+.g--film video { aspect-ratio: auto; width: 100%; height: auto; display: block; }
