@@ -544,6 +544,12 @@
   /* ---------- Init ---------- */
   const ready = () => { fit(); olLayout(); onScroll(); };
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(ready); else ready();
+  // fonts.ready can resolve before Inter Black arrives on a first visit, so the name was sized
+  // with the fallback font and then overflowed. Refit once the heavy weight has actually loaded.
+  if (document.fonts) {
+    document.fonts.addEventListener && document.fonts.addEventListener('loadingdone', fit);
+    document.fonts.load('900 100px Inter').then(fit).catch(() => {});
+  }
   addEventListener('load', ready);
   ready();
 })();
