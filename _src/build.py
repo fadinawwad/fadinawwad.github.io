@@ -217,6 +217,27 @@ DFIN_FEATURE = f'''  <section class="expand expand--b" aria-label="Featured imag
       </div>
     </div>
   </section>'''
+# Stand-ins while the Bounteous work is hidden
+MASARAT_FEATURE = f'''  <section class="expand" aria-label="Featured image">
+    <div class="expand__sticky">
+      <div class="expand__img"><img src="media/masarat/masarat-01.webp" alt="Masarat bus shelter and app" loading="lazy"></div>
+      <div class="expand__copy" data-dark>
+        <span class="eyebrow">Brand — Masarat</span>
+        <p class="expand__title display">Every journey<br>has a story.</p>
+        {fx("View the project", tag="button", attrs='data-open="masarat"', dark=True)}
+      </div>
+    </div>
+  </section>'''
+MADA_FEATURE = f'''  <section class="expand expand--b" aria-label="Featured image">
+    <div class="expand__sticky">
+      <div class="expand__img"><img src="media/mada/mada-01.webp" alt="Mada Biscuit launch posters" loading="lazy"></div>
+      <div class="expand__copy" data-dark>
+        <span class="eyebrow">Campaign — Mada · Pikasso d’Or Gold</span>
+        <p class="expand__title display">This is not<br>a mouse.</p>
+        {fx("View the project", tag="button", attrs='data-open="mada"', dark=True)}
+      </div>
+    </div>
+  </section>'''
 SHOW_WALL = False  # Index wall (kept for later)
 SHOW_WORDS = False  # </> · UI/UX · TL;DR carousel (kept for later)
 FILM = f'''  <section class="film" aria-label="Nivea film">
@@ -321,7 +342,7 @@ page = f'''<!DOCTYPE html>
 
 {FILM if SHOW_NIVEA else ""}
 
-{PROGRESS_FEATURE if SHOW_BOUNTEOUS else ""}
+{PROGRESS_FEATURE if SHOW_BOUNTEOUS else MASARAT_FEATURE}
 
 
   <section class="brands" aria-label="Clients">
@@ -337,7 +358,7 @@ page = f'''<!DOCTYPE html>
     <ul class="aw-list">{awards_html}</ul>
   </section>
 
-{DFIN_FEATURE if SHOW_BOUNTEOUS else ""}
+{DFIN_FEATURE if SHOW_BOUNTEOUS else MADA_FEATURE}
 </main>
 
 <footer class="contact" id="contact" data-dark>
