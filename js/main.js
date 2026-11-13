@@ -89,7 +89,7 @@
   const cards = $$('.stack__card');
   const stack = $('.stack');
   const hero = $('.hero');
-  const front = Math.min(1, cards.length - 1); // Oreo on top of the closed pile
+  const front = Math.floor(cards.length / 2); // middle card (Oreo) on top of the closed pile
   let spread = 0;
   const mix = (a, b, t) => a + (b - a) * t;
   const layout = () => {
