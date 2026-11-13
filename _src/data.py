@@ -40,7 +40,7 @@ PROJECTS = [
          lead="Flavour-first ordering for Wingstop — bold, hungry, and built for speed across web and mobile.",
          desc="A web and mobile ordering experience that puts the flavours front and centre: “what are you craving?” entry points, fan favourites, a find-your-flavour heat scale and a fast store locator — all wrapped in Wingstop’s bold, dark-green brand world.",
          meta=[("Role", "Associate Creative Director"), ("Agency", "Bounteous · Concept"), ("Scope", "Ordering, menu, locator"), ("Platforms", "Web, iOS, Android")],
-         cover="wingstop/wingstop-01.webp",
+         cover="wingstop/wingstop-cover.webp",  # 4:3 crop of wingstop-01
          gallery=[("wingstop/wingstop-01.webp", "c6")]),
     dict(id="midtown", title="Midtown", client="Midtown", type="Mobile Experience · Concept", cat="ui",
          lead="A premium club in your pocket — memberships, programs and family life in one calm, dark interface.",
