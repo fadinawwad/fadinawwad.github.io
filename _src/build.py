@@ -269,7 +269,7 @@ page = f'''<!DOCTYPE html>
 
   <section class="work" id="work">
     <div class="work__head">
-      <h2 class="kern-title"><span class="reveal"><span>Selected</span></span><span class="reveal"><span class="acc">work.</span></span></h2>
+      <h2 class="kern-title"><span class="reveal"><span>The good</span></span><span class="reveal"><span class="acc">stuff.</span></span></h2>
       <p class="muted">UI/UX, brand and campaign work for global brands. Pick a project to see the full story.</p>
     </div>
     <div class="work__filters" role="group" aria-label="Filter projects">
