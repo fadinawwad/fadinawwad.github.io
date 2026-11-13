@@ -198,7 +198,8 @@
   const stmt = $('.statement__text');
   if (stmt) {
     const words = stmt.textContent.trim().split(/\s+/);
-    stmt.innerHTML = words.map(w => `<span class="w">${w}</span>`).join(' ');
+    const acc = (stmt.dataset.accent || '').toLowerCase().split(/\s+/).filter(Boolean);
+    stmt.innerHTML = words.map(w => `<span class="w${acc.includes(w.toLowerCase().replace(/[^\p{L}]/gu, '')) ? ' acc' : ''}">${w}</span>`).join(' ');
   }
   const stmtWords = stmt ? $$('.w', stmt) : [];
 

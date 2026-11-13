@@ -7,7 +7,7 @@
   --muted: #6b6b6b;
   --line: #e6e6e6;
   --soft: #f1f1f1;
-  --accent: #0a0a0a;            /* swap for a brand colour later */
+  --accent: #ff4d1f;            /* signal orange — used sparingly */
   --pad: clamp(16px, 2.2vw, 32px);
   --ease: cubic-bezier(.16, 1, .3, 1);
   --ease-io: cubic-bezier(.76, 0, .24, 1);
@@ -775,3 +775,18 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .hero__intro { grid-row: 4; margin: 14px 0 0; }
 }
 @media (max-width: 900px) { .wall__head { display: none; } }
+
+/* ---------- Accent colour ---------- */
+.cursor, .cursor.on-dark { background: var(--accent); }
+.cursor .cursor__label, .cursor.on-dark .cursor__label { color: #fff; }
+.cursor.is-link, .cursor.on-dark.is-link { background: transparent; box-shadow: inset 0 0 0 1.5px var(--accent); }
+.statement__text .w.acc { color: var(--accent); }
+.caps2__item.is-on .caps2__n { color: var(--accent); }
+.caps2__progress i { background: var(--accent); }
+.card__award, .pv__award { background: var(--accent); color: #fff; }
+.contact__title .reveal:last-child > span { color: var(--accent); }
+.contact .fx--light { color: #fff; }
+.contact .fx--light .fx__bg { background: var(--accent); }
+.contact .fx--light .fx__ic { background: #fff; color: var(--accent); }
+.contact .fx--light:hover .fx__txt, .contact .fx--light:focus-visible .fx__txt { color: #fff; }
+.contact .fx--light:hover .fx__ic, .contact .fx--light:focus-visible .fx__ic { background: transparent; color: #fff; }
