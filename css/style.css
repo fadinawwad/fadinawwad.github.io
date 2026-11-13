@@ -883,3 +883,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .expand__copy::before { height: 90%; background: linear-gradient(transparent, rgba(0,0,0,.55) 35%, rgba(0,0,0,.85)); }
   .caps2__sticky { padding-bottom: 30px; }
 }
+/* breathing room between "View all projects" and the next section */
+.work { padding-bottom: clamp(110px, 12vw, 190px); }
+.work__more { margin-top: clamp(50px, 6vw, 90px); }
