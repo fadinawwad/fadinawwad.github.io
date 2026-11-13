@@ -52,7 +52,7 @@ PROJECTS = [
          lead="Thin enough to slip through anything — a launch campaign for Oreo Thinner.",
          desc="A print and social campaign for the launch of Oreo® Thinner. The visuals play up how thin and light the new biscuit is — slipping between book pages, balancing on chopsticks, riding a paper plane — set against vibrant colours from Oreo’s secondary palette so the work stands out in busy social feeds.",
          meta=[("Role", "Art Director"), ("Agency", "FCB"), ("Scope", "Print, social, retail"), ("Market", "MENA")],
-         cover="oreo/oreo-07.webp",
+         cover="oreo/oreo-03.webp", cover_pos="50% 63%",
          gallery=[("oreo/oreo-06.webp", 12), ("oreo/oreo-01.webp", 6), ("oreo/oreo-02.webp", 6), ("oreo/oreo-03.webp", 6), ("oreo/oreo-04.webp", 6),
                   ("oreo/oreo-05.webp", 12), ("oreo/oreo-07.webp", 6), ("oreo/oreo-08.webp", 6)]),
     dict(id="birkenstock", title="Birkenstock", client="Birkenstock", type="Seasonal Campaign", cat="campaign",
