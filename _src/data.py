@@ -22,7 +22,7 @@ PROJECTS = [
          lead="A web experience that sells the feeling first — and an AI booking agent that turns a conversation into the right resort.",
          desc="A redesigned web experience for Sandals that leads with mood, colour and editorial storytelling, then gets guests to the right room fast. Alongside it, a concept for an AI booking agent: ask for “a resort with scuba activities” and it answers with rich, bookable resort cards instead of a wall of filters.",
          meta=[("Role", "Associate Creative Director"), ("Agency", "Bounteous · Concept"), ("Scope", "Website, AI booking concept"), ("Platforms", "Web, mobile web")],
-         cover="sandals/sandals-01.webp",
+         cover="sandals/sandals-cover.webp",  # 4:3 crop of sandals-01, from the "Greetings" section down
          gallery=[("sandals/sandals-01.webp", 6), ("sandals/sandals-02.webp", 6)]),
     dict(id="progress", title="Progress Residential", client="Progress Residential", type="Mobile App · UX · Concept", cat="ui",
          lead="A renter app that takes people from “what am I looking for?” to a signed lease — and keeps helping after move-in.",
