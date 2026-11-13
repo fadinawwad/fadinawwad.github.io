@@ -219,9 +219,40 @@
   }));
 
   /* ---------- Big words (sticky image mask) ---------- */
-  const wordBlocks = $$('.word').map(w => ({
-    el: w, layers: $$('.word__layer', w), counter: $('.word__counter b', w), bar: $('.word__bar i', w), idx: -1,
-  }));
+  const wordBlocks = [];
+  /* ---------- Big words: auto carousel ---------- */
+  $$('.wcar').forEach(car => {
+    const slides = $$('.word', car), dots = $$('.wcar__dot', car);
+    const bar = $('.wcar__bar i', car), counter = $('.wcar__counter b', car);
+    const SLIDE = 6400; let cur = 0, t0 = performance.now(), paused = false, inView = false;
+    const go = i => {
+      cur = (i + slides.length) % slides.length; t0 = performance.now();
+      slides.forEach((s, k) => s.classList.toggle('is-on', k === cur));
+      dots.forEach((d, k) => d.classList.toggle('is-on', k === cur));
+      if (counter) counter.textContent = String(cur + 1).padStart(2, '0');
+    };
+    dots.forEach(d => d.addEventListener('click', () => go(+d.dataset.go)));
+    let sx = null;
+    car.addEventListener('touchstart', e => { sx = e.touches[0].clientX; }, { passive: true });
+    car.addEventListener('touchend', e => { if (sx === null) return; const dx = e.changedTouches[0].clientX - sx; if (Math.abs(dx) > 45) go(cur + (dx < 0 ? 1 : -1)); sx = null; });
+    new IntersectionObserver(([en]) => { inView = en.isIntersecting; if (inView) t0 = performance.now(); }, { threshold: 0.25 }).observe(car);
+    document.addEventListener('visibilitychange', () => { paused = document.hidden; t0 = performance.now(); });
+    const tick = now => {
+      if (inView && !paused) {
+        const p = Math.min(1, (now - t0) / SLIDE);
+        const layers = $$('.word__layer', slides[cur]);
+        const li = Math.min(layers.length - 1, Math.floor(p * layers.length));
+        layers.forEach((l, k) => {
+          l.classList.toggle('is-on', k === li);
+          if (!reduce) l.style.backgroundPosition = `50% ${20 + p * 60}%`;
+        });
+        if (bar) bar.style.transform = `scaleX(${p})`;
+        if (p >= 1) go(cur + 1);
+      }
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
 
 
   /* ---------- Cursor-driven work wall ---------- */

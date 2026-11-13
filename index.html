@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=1794578468">
+<link rel="stylesheet" href="css/style.css?v=1794578863">
 </head>
 <body>
 <div class="intro" aria-hidden="true"><div class="intro__name"><span>Fadi Awwad</span></div><div class="intro__count">000</div></div>
@@ -60,20 +60,6 @@
     </div>
   </section>
 
-  <section class="film" aria-label="Nivea film">
-    <div class="film__sticky">
-      <div class="film__rows" aria-hidden="true">
-        <div class="film__row film__row--a"><span>NIVEA · MicellAIR · NIVEA · MicellAIR · NIVEA · MicellAIR · NIVEA · MicellAIR · </span></div>
-        <div class="film__row film__row--b"><span>Rose Water · Launch film · Rose Water · Launch film · Rose Water · Launch film · Rose Water · Launch film · </span></div>
-      </div>
-      <button class="film__frame" data-open="nivea" data-cursor="view" data-cursor-text="Watch" aria-label="Watch the NIVEA MicellAIR film">
-        <video data-auto muted loop playsinline preload="none" data-src="media/nivea/nivea-loop.mp4" poster="media/nivea/nivea-loop.webp"></video>
-      </button>
-      <div class="film__cap"><span>NIVEA MicellAIR</span><span class="muted">Launch film — click to watch with sound</span></div>
-    </div>
-  </section>
-
-
   <section class="ol" aria-label="Oreo Thinner highlight">
     <div class="ol__sticky">
       <div class="ol__text ol__solid" aria-hidden="true"><span class="ol__word">Stand out.</span></div>
@@ -106,46 +92,61 @@
     <div class="wall__overlay"><p class="wall__hint"><span class="hint-desk">Move your cursor to explore — click any image to open the project</span><span class="hint-touch">Swipe to explore — tap to open</span></p></div>
   </section>
 
-  <div class="words">
-    <section class="word">
-      <div class="word__sticky">
-        <div class="word__copy">
-          <span class="word__index">(01)</span>
-          <h3 class="h3">Built, not just drawn.</h3>
-          <p>Design that ships — Figma systems, components and prototypes that developers can actually build.</p>
-          <a class="fx" href="#work"><span class="fx__bg"></span><span class="fx__txt">See the work</span><span class="fx__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+  <section class="wcar" aria-roledescription="carousel" aria-label="What I bring">
+    <div class="wcar__track">
+      <div class="word is-on" data-i="0" aria-roledescription="slide" aria-label="1 of 3">
+        <div class="word__sticky">
+          <div class="word__copy">
+            <span class="word__index">(01)</span>
+            <h3 class="h3">Built, not just drawn.</h3>
+            <p>Design that ships — Figma systems, components and prototypes that developers can actually build.</p>
+            <a class="fx" href="#work"><span class="fx__bg"></span><span class="fx__txt">See the work</span><span class="fx__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+          <div class="word__mask"><span class="word__layer display is-on" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-03.webp)" aria-hidden="false">&lt;/&gt;</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/sandals/sandals-02.webp)" aria-hidden="true">&lt;/&gt;</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/hgv/hgv-01.webp)" aria-hidden="true">&lt;/&gt;</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-12.webp)" aria-hidden="true">&lt;/&gt;</span></div>
         </div>
-        <div class="word__mask" data-speed="-0.08"><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-03.webp)" aria-hidden="false">&lt;/&gt;</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/sandals/sandals-02.webp)" aria-hidden="true">&lt;/&gt;</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/hgv/hgv-01.webp)" aria-hidden="true">&lt;/&gt;</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-12.webp)" aria-hidden="true">&lt;/&gt;</span></div>
-        <div class="word__bar"><i></i></div>
-        <div class="word__counter"><b>01</b> / 04</div>
       </div>
-    </section>
-    <section class="word">
-      <div class="word__sticky">
-        <div class="word__copy">
-          <span class="word__index">(02)</span>
-          <h3 class="h3">Made for people.</h3>
-          <p>Websites, mobile and app experiences designed around real behaviour — clear, fast and a little bit delightful.</p>
-          <a class="fx" href="#work"><span class="fx__bg"></span><span class="fx__txt">See the work</span><span class="fx__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <div class="word" data-i="1" aria-roledescription="slide" aria-label="2 of 3">
+        <div class="word__sticky">
+          <div class="word__copy">
+            <span class="word__index">(02)</span>
+            <h3 class="h3">Made for people.</h3>
+            <p>Websites, mobile and app experiences designed around real behaviour — clear, fast and a little bit delightful.</p>
+            <a class="fx" href="#work"><span class="fx__bg"></span><span class="fx__txt">See the work</span><span class="fx__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+          <div class="word__mask"><span class="word__layer display is-on" data-fit="1" data-fit-h="0.5" style="background-image:url(media/progress/progress-01.webp)" aria-hidden="false">UI/UX</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/midtown/midtown-01.webp)" aria-hidden="true">UI/UX</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/progress/progress-03.webp)" aria-hidden="true">UI/UX</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/progress/progress-02.webp)" aria-hidden="true">UI/UX</span></div>
         </div>
-        <div class="word__mask" data-speed="-0.08"><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/progress/progress-01.webp)" aria-hidden="false">UI/UX</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/midtown/midtown-01.webp)" aria-hidden="true">UI/UX</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/progress/progress-03.webp)" aria-hidden="true">UI/UX</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/progress/progress-02.webp)" aria-hidden="true">UI/UX</span></div>
-        <div class="word__bar"><i></i></div>
-        <div class="word__counter"><b>01</b> / 04</div>
       </div>
-    </section>
-    <section class="word">
-      <div class="word__sticky">
-        <div class="word__copy">
-          <span class="word__index">(03)</span>
-          <h3 class="h3">Clarity first.</h3>
-          <p>Complex products, made simple. I cut the noise so people get it in seconds.</p>
-          <a class="fx" href="#work"><span class="fx__bg"></span><span class="fx__txt">See the work</span><span class="fx__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+      <div class="word" data-i="2" aria-roledescription="slide" aria-label="3 of 3">
+        <div class="word__sticky">
+          <div class="word__copy">
+            <span class="word__index">(03)</span>
+            <h3 class="h3">Clarity first.</h3>
+            <p>Complex products, made simple. I cut the noise so people get it in seconds.</p>
+            <a class="fx" href="#work"><span class="fx__bg"></span><span class="fx__txt">See the work</span><span class="fx__ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+          </div>
+          <div class="word__mask"><span class="word__layer display is-on" data-fit="1" data-fit-h="0.5" style="background-image:url(media/wingstop/wingstop-01.webp)" aria-hidden="false">TL;DR</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-11.webp)" aria-hidden="true">TL;DR</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-13.webp)" aria-hidden="true">TL;DR</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-14.webp)" aria-hidden="true">TL;DR</span></div>
         </div>
-        <div class="word__mask" data-speed="-0.08"><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/wingstop/wingstop-01.webp)" aria-hidden="false">TL;DR</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-11.webp)" aria-hidden="true">TL;DR</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-13.webp)" aria-hidden="true">TL;DR</span><span class="word__layer display" data-fit="1" data-fit-h="0.5" style="background-image:url(media/dfin/dfin-14.webp)" aria-hidden="true">TL;DR</span></div>
-        <div class="word__bar"><i></i></div>
-        <div class="word__counter"><b>01</b> / 04</div>
+      </div></div>
+    <div class="wcar__nav">
+      <div class="wcar__dots"><button class="wcar__dot is-on" data-go="0" aria-label="Show &lt;/&gt;"><span>&lt;/&gt;</span></button><button class="wcar__dot" data-go="1" aria-label="Show UI/UX"><span>UI/UX</span></button><button class="wcar__dot" data-go="2" aria-label="Show TL;DR"><span>TL;DR</span></button></div>
+      <div class="wcar__bar"><i></i></div>
+      <div class="wcar__counter"><b>01</b> / 03</div>
+    </div>
+  </section>
+  <section class="film" aria-label="Nivea film">
+    <div class="film__sticky">
+      <div class="film__rows" aria-hidden="true">
+        <div class="film__row film__row--a"><span>NIVEA · MicellAIR · NIVEA · MicellAIR · NIVEA · MicellAIR · NIVEA · MicellAIR · </span></div>
+        <div class="film__row film__row--b"><span>Rose Water · Launch film · Rose Water · Launch film · Rose Water · Launch film · Rose Water · Launch film · </span></div>
       </div>
-    </section></div>
+      <button class="film__frame" data-open="nivea" data-cursor="view" data-cursor-text="Watch" aria-label="Watch the NIVEA MicellAIR film">
+        <video data-auto muted loop playsinline preload="none" data-src="media/nivea/nivea-loop.mp4" poster="media/nivea/nivea-loop.webp"></video>
+      </button>
+      <div class="film__cap"><span>NIVEA MicellAIR</span><span class="muted">Launch film — click to watch with sound</span></div>
+    </div>
+  </section>
+
+
 
   <section class="expand" aria-label="Featured image">
     <div class="expand__sticky">
@@ -742,6 +743,6 @@
 </div>
 
 <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-<script src="js/main.js?v=1794578468"></script>
+<script src="js/main.js?v=1794578863"></script>
 </body>
 </html>

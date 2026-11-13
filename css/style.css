@@ -792,3 +792,30 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .contact .fx--light:hover .fx__ic, .contact .fx--light:focus-visible .fx__ic { background: transparent; color: #fff; }
 .g--film video { aspect-ratio: auto; width: 100%; height: auto; display: block; }
 .film__frame { display: block; padding: 0; border: 0; cursor: pointer; background: #000; }
+
+/* ---------- Big words: auto carousel ---------- */
+.wcar { position: relative; }
+.wcar__track { display: grid; }
+.wcar .word { grid-area: 1 / 1; opacity: 0; visibility: hidden; transition: opacity .7s var(--ease), visibility 0s .7s; }
+.wcar .word.is-on { opacity: 1; visibility: visible; transition: opacity .7s var(--ease), visibility 0s; z-index: 1; }
+.wcar .word__copy > * { transform: translateY(18px); opacity: 0; transition: transform .8s var(--ease), opacity .6s var(--ease); }
+.wcar .word.is-on .word__copy > * { transform: none; opacity: 1; }
+.wcar .word.is-on .word__copy > *:nth-child(2) { transition-delay: .06s; }
+.wcar .word.is-on .word__copy > *:nth-child(3) { transition-delay: .12s; }
+.wcar .word.is-on .word__copy > *:nth-child(4) { transition-delay: .18s; }
+.wcar .word__mask { transform: translateX(4%); transition: transform 1.1s var(--ease); }
+.wcar .word.is-on .word__mask { transform: none; }
+.wcar__nav { position: absolute; left: var(--pad); right: var(--pad); bottom: var(--pad); z-index: 3; display: flex; align-items: center; gap: 24px; }
+.wcar__dots { display: flex; gap: 6px; }
+.wcar__dot { font-size: 13px; font-weight: 700; padding: 7px 13px; border-radius: 999px; background: var(--soft); color: #8a8a8a; transition: background .3s, color .3s; }
+.wcar__dot:hover { color: var(--fg); }
+.wcar__dot.is-on { background: var(--fg); color: #fff; }
+.wcar__bar { flex: 1; height: 2px; background: var(--line); position: relative; overflow: hidden; }
+.wcar__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); }
+.wcar__counter { font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+@media (max-width: 900px) {
+  .wcar .word__sticky { padding-bottom: 110px; }
+  .wcar__nav { gap: 14px; }
+  .wcar__counter { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .wcar .word__copy > *, .wcar .word__mask { transform: none; } }
