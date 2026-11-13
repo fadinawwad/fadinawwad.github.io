@@ -404,6 +404,14 @@
       if (!reduce) b.layers.forEach(l => { l.style.backgroundPosition = `50% ${15 + p * 70}%`; });
     });
   }
+  /* ---------- Cycling covers ---------- */
+  $$('[data-cycle]').forEach(c => {
+    const imgs = $$('img', c); if (imgs.length < 2 || reduce) return;
+    let i = 0, vis = false;
+    new IntersectionObserver(([en]) => { vis = en.isIntersecting; }).observe(c);
+    setInterval(() => { if (!vis || document.hidden) return; imgs[i].classList.remove('is-on'); i = (i + 1) % imgs.length; imgs[i].classList.add('is-on'); }, 3200);
+  });
+
   /* Mobile header: solid bar once you scroll, dark over dark sections */
   const hdr = $('.header');
   const hdrState = () => {
