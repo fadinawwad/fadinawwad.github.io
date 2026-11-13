@@ -191,6 +191,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .stack__card img { width: 100%; height: 100%; object-fit: cover; }
 .hero__name {
   grid-column: 1 / -1; align-self: end;
+  font-weight: 900;
   margin: 0; white-space: nowrap;
   position: relative; z-index: 3;
 }
@@ -320,7 +321,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .contact__grid > div:nth-child(4) { grid-column: 10 / span 3; text-align: right; }
 .contact__grid span { display: block; color: #9a9a9a; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
 .contact__grid a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.footer-name { margin: clamp(50px, 7vw, 100px) 0 0; white-space: nowrap; color: var(--bg); }
+.footer-name { margin: clamp(50px, 7vw, 100px) 0 0; white-space: nowrap; color: var(--bg); font-weight: 900; }
 .footer-bar { display: flex; justify-content: space-between; font-size: 13px; color: #9a9a9a; margin-top: 18px; }
 .to-top:hover { color: #fff; }
 
