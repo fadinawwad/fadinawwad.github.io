@@ -5,7 +5,7 @@ PHONE = ""  # add later, e.g. "+1 (416) 000-0000"
 
 # featured=False keeps a project off the homepage grid (it still appears on the All projects page)
 PROJECTS = [
-    dict(id="dfin", title="DFIN", client="DFIN · at Bounteous", type="Web · Social · Campaign", cat="ui brand campaign",
+    dict(id="dfin", title="Donnelley Financial", client="DFIN · at Bounteous", type="Web · Social · Campaign", cat="ui brand campaign",
          lead="One bold purple system, stretched across a financial-technology brand's websites, reports, social, events and outdoor.",
          desc="As lead designer at Bounteous, I designed a wide body of work for DFIN — the ESG Pulse Report, the DealMaker Meter report, Data Protect Solutions, ActiveDisclosure and the Venue “Pls fix” campaign, plus the event identity for the DFIN Sales Forum. The challenge was keeping one consistent, recognisable visual language while each product spoke to a different audience — from compliance teams to M&A dealmakers.",
          meta=[("Role", "Lead Designer"), ("Agency", "Bounteous"), ("Scope", "Web, social, print, OOH, motion, events"), ("Platforms", "Desktop, mobile, social")],
@@ -42,13 +42,13 @@ PROJECTS = [
          meta=[("Role", "Associate Creative Director"), ("Agency", "Bounteous · Concept"), ("Scope", "Ordering, menu, locator"), ("Platforms", "Web, iOS, Android")],
          cover="wingstop/wingstop-cover.webp",  # 4:3 crop of wingstop-01
          gallery=[("wingstop/wingstop-01.webp", "c6")]),
-    dict(id="midtown", title="Midtown", client="Midtown", type="Mobile Experience · Concept", cat="ui",
+    dict(id="midtown", title="Midtown Athletic Club", client="Midtown", type="Mobile Experience · Concept", cat="ui",
          lead="A premium club in your pocket — memberships, programs and family life in one calm, dark interface.",
          desc="A mobile experience for Midtown that brings memberships, family and youth programs, tennis and group fitness into one place. A restrained, premium visual language with clear hierarchy makes a busy schedule of activities feel effortless to browse.",
          meta=[("Role", "Associate Creative Director"), ("Agency", "Bounteous · Concept"), ("Scope", "Mobile experience"), ("Platforms", "iOS, Android, mobile web")],
          cover="midtown/midtown-01.webp",
          gallery=[("midtown/midtown-01.webp", "c6")]),
-    dict(id="oreo", title="Oreo Thinner", client="Oreo", type="Launch Campaign", cat="campaign",
+    dict(id="oreo", title="Oreo", client="Oreo", type="Launch Campaign", cat="campaign",
          lead="Thin enough to slip through anything — a launch campaign for Oreo Thinner.",
          desc="A print and social campaign for the launch of Oreo® Thinner. The visuals play up how thin and light the new biscuit is — slipping between book pages, balancing on chopsticks, riding a paper plane — set against vibrant colours from Oreo’s secondary palette so the work stands out in busy social feeds.",
          meta=[("Role", "Art Director"), ("Agency", "FCB"), ("Scope", "Print, social, retail"), ("Market", "MENA")],
@@ -68,7 +68,7 @@ PROJECTS = [
          meta=[("Discipline", "Art Direction, Design"), ("Agency", "Saatchi & Saatchi"), ("Scope", "Print, OOH, digital"), ("Market", "MENA")],
          cover="samsung/samsung-04.webp",
          gallery=[("samsung/samsung-04.webp", 12), ("samsung/samsung-01.webp", 4), ("samsung/samsung-02.webp", 4), ("samsung/samsung-03.webp", 4)]),
-    dict(id="primal", featured=False, title="Primal", client="Primal Restaurant", type="Brand Identity", cat="brand",
+    dict(id="primal", featured=False, title="Primal Restaurant", client="Primal Restaurant", type="Brand Identity", cat="brand",
          lead="Back to basics — a brand identity for Amman’s first paleo restaurant.",
          desc="A logo and visual identity for Primal, the first and only paleo restaurant in Amman. The minimalist mark nods to our ancestors’ simple lifestyle and diet, with an earthy palette of brown and green carried through menus, signage, packaging and the interior.",
          meta=[("Role", "Brand designer"), ("Type", "Freelance project"), ("Scope", "Logo, menus, signage, interior"), ("Market", "Amman, Jordan")],
@@ -94,7 +94,7 @@ PROJECTS = [
          meta=[("Discipline", "Art Direction, Design"), ("Scope", "Print, OOH, retail"), ("Market", "Jordan"), ("Recognition", "Pikasso d\u2019Or Gold")],
          cover="mada/mada-01.webp",
          gallery=[("mada/mada-01.webp", 12), ("mada/mada-03.webp", 4), ("mada/mada-04.webp", 4), ("mada/mada-05.webp", 4), ("mada/mada-02.webp", "c6")]),
-    dict(id="budweiser", featured=False, title="Budweiser NA", client="Budweiser", type="Launch Campaign", cat="campaign",
+    dict(id="budweiser", featured=False, title="Budweiser", client="Budweiser", type="Launch Campaign", cat="campaign",
          lead="The Boss of Taste — launching Budweiser non-alcoholic for a young Saudi audience.",
          desc="A launch campaign for Budweiser\u00ae non-alcoholic beer. The design is inspired by the urban, underground style of Saudi youth, reflecting the dynamic and lively personality of the brand across social, print and in-mall displays.",
          meta=[("Role", "Art Director"), ("Agency", "FCB"), ("Scope", "Social, print, retail"), ("Market", "Saudi Arabia")],
