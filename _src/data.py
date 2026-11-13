@@ -271,12 +271,19 @@ PROJECTS = [
 ]
 
 # Archived — hidden from the site; move an id back into PROJECTS by deleting it here
+# Bounteous work — set SHOW_BOUNTEOUS = True to bring it all back (projects, cards and the
+# Progress / DFIN feature sections). The Good stuff order then follows FEATURED_ORDER_ALL.
+SHOW_BOUNTEOUS = False
+BOUNTEOUS = {"dfin", "sandals", "progress", "wingstop", "midtown"}
 ARCHIVED = {"hilton", "logos", "madanet", "eff", "elle", "trust", "insurance", "naql", "jmi", "samsungprint", "wow", "ajras", "illus", "font", "photo"}
+if not SHOW_BOUNTEOUS:
+    ARCHIVED |= BOUNTEOUS
 PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
-FEATURED_ORDER = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea"]
+FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea"]  # order on 13 Nov 2026
+FEATURED_ORDER = [i for i in FEATURED_ORDER_ALL if SHOW_BOUNTEOUS or i not in BOUNTEOUS]
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
 HERO_CARDS = ["hero/midtown-01.webp", "hero/becks-01.webp", "hero/oreo-01.webp", "hero/birkenstock.webp", "hero/amman-01.webp"]  # same fan as the coming-soon page; middle card sits on top

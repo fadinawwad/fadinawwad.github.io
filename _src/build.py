@@ -197,6 +197,26 @@ OUTLINE = f'''  <section class="ol" aria-label="Oreo Thinner highlight">
 MARQUEE_A = "NIVEA · MicellAIR · "
 MARQUEE_B = "Rose Water · Launch film · "
 SHOW_NIVEA = False
+PROGRESS_FEATURE = f'''  <section class="expand" aria-label="Featured image">
+    <div class="expand__sticky">
+      <div class="expand__img"><img src="media/progress/progress-01.webp" alt="Progress Residential renter app" loading="lazy"></div>
+      <div class="expand__copy" data-dark>
+        <span class="eyebrow">UI/UX — Progress Residential</span>
+        <p class="expand__title display">Designed for<br>real life.</p>
+        {fx("View the project", tag="button", attrs='data-open="progress"', dark=True)}
+      </div>
+    </div>
+  </section>'''
+DFIN_FEATURE = f'''  <section class="expand expand--b" aria-label="Featured image">
+    <div class="expand__sticky">
+      <div class="expand__img"><img src="media/dfin/dfin-16-wide.webp" alt="DFIN Venue billboard" loading="lazy"></div>
+      <div class="expand__copy" data-dark>
+        <span class="eyebrow">Campaign — DFIN Venue</span>
+        <p class="expand__title display">Big ideas,<br>bigger stage.</p>
+        {fx("View the project", tag="button", attrs='data-open="dfin"', dark=True)}
+      </div>
+    </div>
+  </section>'''
 SHOW_WALL = False  # Index wall (kept for later)
 SHOW_WORDS = False  # </> · UI/UX · TL;DR carousel (kept for later)
 FILM = f'''  <section class="film" aria-label="Nivea film">
@@ -301,16 +321,7 @@ page = f'''<!DOCTYPE html>
 
 {FILM if SHOW_NIVEA else ""}
 
-  <section class="expand" aria-label="Featured image">
-    <div class="expand__sticky">
-      <div class="expand__img"><img src="media/progress/progress-01.webp" alt="Progress Residential renter app" loading="lazy"></div>
-      <div class="expand__copy" data-dark>
-        <span class="eyebrow">UI/UX — Progress Residential</span>
-        <p class="expand__title display">Designed for<br>real life.</p>
-        {fx("View the project", tag="button", attrs='data-open="progress"', dark=True)}
-      </div>
-    </div>
-  </section>
+{PROGRESS_FEATURE if SHOW_BOUNTEOUS else ""}
 
 
   <section class="brands" aria-label="Clients">
@@ -326,16 +337,7 @@ page = f'''<!DOCTYPE html>
     <ul class="aw-list">{awards_html}</ul>
   </section>
 
-  <section class="expand expand--b" aria-label="Featured image">
-    <div class="expand__sticky">
-      <div class="expand__img"><img src="media/dfin/dfin-16-wide.webp" alt="DFIN Venue billboard" loading="lazy"></div>
-      <div class="expand__copy" data-dark>
-        <span class="eyebrow">Campaign — DFIN Venue</span>
-        <p class="expand__title display">Big ideas,<br>bigger stage.</p>
-        {fx("View the project", tag="button", attrs='data-open="dfin"', dark=True)}
-      </div>
-    </div>
-  </section>
+{DFIN_FEATURE if SHOW_BOUNTEOUS else ""}
 </main>
 
 <footer class="contact" id="contact" data-dark>
