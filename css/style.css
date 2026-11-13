@@ -774,3 +774,4 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .hero__foot > span:last-child { display: none; }
   .hero__intro { grid-row: 4; margin: 14px 0 0; }
 }
+@media (max-width: 900px) { .wall__head { display: none; } }
