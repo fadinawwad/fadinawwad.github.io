@@ -352,6 +352,7 @@
     });
     // Expanding images: grow from a small frame on the left to full-bleed
     $$('.expand').forEach(ex => {
+      if (innerWidth <= 900) { $('.expand__img', ex).style.clipPath = ''; $('.expand__img img', ex).style.transform = ''; ex.classList.add('is-full'); return; }
       const r = ex.getBoundingClientRect(); const p = clamp(-r.top / (r.height - vh), 0, 1);
       const q = reduce ? 1 : clamp(p / 0.7, 0, 1);
       const ease = 1 - Math.pow(1 - q, 3);
@@ -403,6 +404,16 @@
       if (!reduce) b.layers.forEach(l => { l.style.backgroundPosition = `50% ${15 + p * 70}%`; });
     });
   }
+  /* Mobile header: solid bar once you scroll, dark over dark sections */
+  const hdr = $('.header');
+  const hdrState = () => {
+    if (!hdr) return;
+    hdr.classList.toggle('is-scrolled', scrollY > 40);
+    const el = document.elementFromPoint(innerWidth / 2, (hdr.offsetHeight || 56) + 4);
+    hdr.classList.toggle('is-dark', !!(el && el.closest('.contact, .expand, .menu')));
+  };
+  addEventListener('scroll', () => requestAnimationFrame(hdrState), { passive: true });
+  hdrState();
   if (lenis) lenis.on('scroll', onScroll); else addEventListener('scroll', onScroll, { passive: true });
   addEventListener('resize', () => { fit(); olLayout(); onScroll(); });
 

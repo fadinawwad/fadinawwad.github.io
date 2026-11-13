@@ -667,7 +667,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .card__media::after { z-index: 3; }
 
 /* What I do — pinned list + fading statements ----------------------------- */
-.caps2 { position: relative; height: 300vh; }
+.caps2 { position: relative; height: 190vh; }
 .caps2__sticky { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--pad); padding: 0 var(--pad); align-items: center; }
 .caps2__left { grid-column: 1 / span 4; align-self: center; }
 .caps2__left .eyebrow { margin: 0 0 28px; }
@@ -837,4 +837,49 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 900px) {
   .contact__about { grid-template-columns: 1fr; gap: 14px; }
   .contact__about .eyebrow, .contact__about-body { grid-column: 1 / -1; }
+}
+
+/* Case-study notes in the project viewer */
+.pv__case { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--pad); margin-top: clamp(40px, 5vw, 70px); padding-top: 28px; border-top: 1px solid var(--line); }
+.pv__case h3 { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 10px; }
+.pv__case p { margin: 0; font-size: 15px; line-height: 1.55; }
+@media (max-width: 900px) { .pv__case { grid-template-columns: 1fr; gap: 22px; } }
+/* Award → project link */
+.aw__proj { display: block; margin-top: 10px; font-size: 13px; font-weight: 700; color: var(--accent); text-align: left; }
+.aw__proj:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* ---------- Mobile-friendly pass ---------- */
+@media (max-width: 900px) {
+  /* header becomes a clean solid bar so it never clashes with images */
+  .header { mix-blend-mode: normal; color: var(--fg); padding: 14px var(--pad); transition: background .3s, color .3s, box-shadow .3s; }
+  .header.is-scrolled { background: rgba(255,255,255,.92); -webkit-backdrop-filter: saturate(1.4) blur(12px); backdrop-filter: saturate(1.4) blur(12px); box-shadow: 0 1px 0 rgba(0,0,0,.06); }
+  .header.is-scrolled.is-dark { background: rgba(10,10,10,.88); color: #fff; box-shadow: 0 1px 0 rgba(255,255,255,.08); }
+  .menu-open .header, .menu-open .header.is-scrolled { background: transparent; color: #fff; box-shadow: none; -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+  /* Selected work heading stacks */
+  .work__head { flex-direction: column; align-items: start; gap: 14px; }
+  .work__head p { max-width: none; }
+  .work__filters { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+  .work__filters::-webkit-scrollbar { display: none; }
+
+  /* Expanding images become simple full-width feature cards (no scroll-jacking) */
+  .expand { height: auto; padding: 0 var(--pad); margin: 60px 0; }
+  .expand__sticky { position: relative; height: auto; aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; }
+  .expand__img { clip-path: none !important; }
+  .expand__img img { transform: none !important; }
+  .expand__copy { opacity: 1; transform: none; left: 20px; right: 20px; bottom: 22px; }
+  .expand__copy::before { height: 75%; left: -20px; right: -20px; bottom: -22px; }
+  .expand__title { font-size: clamp(38px, 11vw, 56px); margin: 8px 0 18px; }
+
+  /* What I do / brands: less empty space */
+  .caps2__sticky { padding: 70px 0; }
+  .brands__title { font-size: clamp(40px, 12vw, 60px) !important; }
+
+  /* bigger tap targets */
+  .chip { padding: 10px 16px; }
+  .contact__grid a, .footer-bar a { display: inline-block; padding: 4px 0; }
+}
+@media (max-width: 900px) {
+  .expand__copy::before { height: 90%; background: linear-gradient(transparent, rgba(0,0,0,.55) 35%, rgba(0,0,0,.85)); }
+  .caps2__sticky { padding-bottom: 30px; }
 }
