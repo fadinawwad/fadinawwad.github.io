@@ -82,10 +82,10 @@ PROJECTS = [
          gallery=[("amman/amman-01.webp", 12), ("amman/amman-02.webp", "c6")]),
 
     # ---- Archive projects (All projects page only) ----
-    dict(id="clorox", featured=False, award="Loeries Silver", title="Clorox", client="Clorox", type="Integrated Campaign", cat="campaign",
+    dict(id="clorox", featured=False, award="Loeries Silver & Bronze", title="Clorox", client="Clorox", type="Integrated Campaign", cat="campaign",
          lead="Two ideas that made a household cleaner impossible to ignore — Pee Rug and the Junkyard Dishware Collection.",
          desc="Pee Rug: for dog owners, the city is the toilet — but for dogs, so is your carpet. To promote Clorox\u00ae Pet Urine Remover we commissioned local artisans to handweave oriental carpet posters spotlighting the classic pee spots — a fire hydrant, a lamppost — and placed them in pet shops. Junkyard Dishware: to show Clorox\u00ae Bleach bringing old things back to life, we turned discarded porcelain bathware from a junkyard into beautiful, traditionally painted plates — tapping into the Arab love of big, generous meals.",
-         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Ambient, retail, film"), ("Market", "MENA"), ("Recognition", "Loeries Silver")],
+         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Ambient, retail, film"), ("Market", "MENA"), ("Recognition", "Loeries Silver & Bronze 2019")],
          cover="clorox/clorox-01.webp",
          gallery=[("clorox/clorox-01.webp", 12), ("vc:clorox/clorox-video-1", 6), ("vc:clorox/clorox-video-2", 6), ("clorox/clorox-02.webp", 12)]),
     dict(id="mada", featured=False, award="Pikasso d\u2019Or Gold", title="Mada Telecom", client="Mada", type="Product Launch Campaign", cat="campaign",
@@ -304,7 +304,7 @@ CLIENTS = ["samsung", "coca-cola", "emirates", "porsche", "maserati", "hilton-gr
            "birkenstock", "clorox", "citibank", "orange", "skoda", "renault", "becks", "philip-morris"]
 TALL = {"nivea", "orange", "skoda", "renault", "emirates", "porsche", "maserati", "clorox", "becks"}
 
-AWARDS = [("Loeries", "Design", "Silver", "2019", "clorox"), ("Loeries", "Out of Home", "Bronze", "2019"), ("Dubai Lynx", "Shortlist", "Shortlist", "2019"),
+AWARDS = [("Loeries", "Design", "Silver", "2019", "clorox"), ("Loeries", "Out of Home", "Bronze", "2019", "clorox"), ("Dubai Lynx", "Shortlist", "Shortlist", "2019"),
           ("Leo Lab", "Leo Burnett", "Gold", "2014"), ("Pikasso d’Or", "Design", "Gold", "2011", "mada")]
 
 
