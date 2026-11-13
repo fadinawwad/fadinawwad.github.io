@@ -316,9 +316,9 @@ page = f'''<!DOCTYPE html>
     </div>
     <div class="work__filters" role="group" aria-label="Filter projects">
       <button class="chip is-on" data-filter="all">All <sup>{len(FEATURED)}</sup></button>
-      <button class="chip" data-filter="ui">UI/UX <sup>{sum("ui" in p["cat"] for p in FEATURED)}</sup></button>
-      <button class="chip" data-filter="brand">Brand <sup>{sum("brand" in p["cat"] for p in FEATURED)}</sup></button>
-      <button class="chip" data-filter="campaign">Campaign <sup>{sum("campaign" in p["cat"] for p in FEATURED)}</sup></button>
+      {f'<button class="chip" data-filter="ui">UI/UX <sup>{_n}</sup></button>' if (_n := sum("ui" in p["cat"] for p in FEATURED)) else ""}
+      {f'<button class="chip" data-filter="brand">Brand <sup>{_n}</sup></button>' if (_n := sum("brand" in p["cat"] for p in FEATURED)) else ""}
+      {f'<button class="chip" data-filter="campaign">Campaign <sup>{_n}</sup></button>' if (_n := sum("campaign" in p["cat"] for p in FEATURED)) else ""}
     </div>
     <div class="cards">{cards}
     </div>
