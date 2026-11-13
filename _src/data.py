@@ -9,7 +9,8 @@ PROJECTS = [
          lead="One bold purple system, stretched across a financial-technology brand's websites, reports, social, events and outdoor.",
          desc="As lead designer at Bounteous, I designed a wide body of work for DFIN — the ESG Pulse Report, the DealMaker Meter report, Data Protect Solutions, ActiveDisclosure and the Venue “Pls fix” campaign, plus the event identity for the DFIN Sales Forum. The challenge was keeping one consistent, recognisable visual language while each product spoke to a different audience — from compliance teams to M&A dealmakers.",
          meta=[("Role", "Lead Designer"), ("Agency", "Bounteous"), ("Scope", "Web, social, print, OOH, motion, events"), ("Platforms", "Desktop, mobile, social")],
-         cover="dfin/dfin-14.webp",
+         cover="dfin/dfin-10-video-2.webp", cover_video="dfin/dfin-10-video-2.mp4",
+         cover_style="object-fit:contain;background:#dcdbe0",  # square film on a 4:3 card, padded in its own grey
          gallery=[("dfin/dfin-03.webp", 12), ("v:dfin/dfin-04-video-1", 12), ("dfin/dfin-02.webp", 6), ("dfin/dfin-04.webp", 6),
                   ("dfin/dfin-06.webp", 12), ("dfin/dfin-07.webp", 6), ("dfin/dfin-08.webp", 6),
                   ("v:dfin/dfin-10-video-2", "4sq"), ("v:dfin/dfin-10-video-4", "4sq"), ("v:dfin/dfin-10-video-5", "4sq"),
