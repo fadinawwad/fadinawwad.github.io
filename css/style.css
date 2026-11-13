@@ -910,3 +910,6 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .kern-title .reveal:nth-child(2) > span { transition-delay: .07s; }
 .kern-title .acc { color: var(--accent); }
 @media (max-width: 900px) { .kern-title { font-size: clamp(46px, 14vw, 80px); } }
+/* tighter stack for "Selected / work." */
+.kern-title { line-height: .84; }
+.kern-title .reveal { padding-bottom: .06em; margin-bottom: -.1em; }
