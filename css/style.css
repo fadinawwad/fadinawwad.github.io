@@ -819,3 +819,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   .wcar__counter { display: none; }
 }
 @media (prefers-reduced-motion: reduce) { .wcar .word__copy > *, .wcar .word__mask { transform: none; } }
+
+/* Calmer image entrances: no side-wipe curtains, just a soft rise into place */
+.card__media::after { display: none; }
+.pv .g { clip-path: none; opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform 1.1s var(--ease); }
+.pv .g.in { clip-path: none; opacity: 1; transform: none; }
+.fade { transform: translateY(24px); }
+@media (prefers-reduced-motion: reduce) { .pv .g { opacity: 1; transform: none; } }
