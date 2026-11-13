@@ -913,7 +913,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 900px) { .kern-title { font-size: clamp(46px, 14vw, 80px); } }
 /* tighter stack for "Selected / work." */
 .kern-title { line-height: .84; }
-.kern-title .reveal { padding-bottom: .06em; margin-bottom: -.1em; }
+.kern-title .reveal { padding-bottom: .24em; margin-bottom: -.15em; }  /* room for descenders (g, y, p) */
 
 /* Cover that slowly swaps between campaign images */
 .cycle { position: relative; display: block; width: 100%; height: 100%; }
