@@ -304,7 +304,7 @@ CLIENTS = ["samsung", "coca-cola", "emirates", "porsche", "maserati", "hilton-gr
            "birkenstock", "clorox", "citibank", "orange", "skoda", "renault", "becks", "philip-morris"]
 TALL = {"nivea", "orange", "skoda", "renault", "emirates", "porsche", "maserati", "clorox", "becks"}
 
-AWARDS = [("Loeries", "Design", "Silver", "2019", "clorox"), ("Loeries", "Out of Home", "Bronze", "2019", "clorox"), ("Dubai Lynx", "Shortlist", "Shortlist", "2019"),
+AWARDS = [("Loeries", "Design", "Silver", "2019", "clorox"), ("Loeries", "Out of Home", "Bronze", "2019", "clorox"), ("Dubai Lynx", "Design", "Shortlist", "2019"),
           ("Leo Lab", "Leo Burnett", "Gold", "2014"), ("Pikasso d’Or", "Design", "Gold", "2011", "mada")]
 
 
