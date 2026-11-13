@@ -76,7 +76,8 @@ def award_tag(p):
 def cover_media(p, w, h):
     if p.get("cover_video"):
         return (f'<video data-auto muted loop playsinline preload="none" data-src="media/{p["cover_video"]}" '
-                f'poster="media/{p["cover"]}" width="{w}" height="{h}" aria-label="{e(p["title"])} — film"></video>')
+                f'poster="media/{p["cover"]}" width="{w}" height="{h}" aria-label="{e(p["title"])} — film"'
+                + (f' style="object-position:{p["cover_pos"]}"' if p.get("cover_pos") else "") + '></video>')
     if p.get("cover_cycle"):
         return '<span class="cycle" data-cycle>' + "".join(
             f'<img class="{"is-on" if k == 0 else ""}" src="media/{img}" alt="{e(p["title"]) + " — cover" if k == 0 else ""}" width="{w}" height="{h}" loading="lazy" style="object-position:{pos}">'

@@ -213,7 +213,7 @@ PROJECTS = [
          lead="New MicellAIR Rose Water \u2014 a launch film that follows one fresh face from morning to night.",
          desc="A launch film for NIVEA MicellAIR Rose Water. The story follows a woman through her day \u2014 from the mirror to the city and back \u2014 then dives into rose petals and water to show the product\u2019s rose-water formula and how it removes even waterproof makeup, before landing on the new range.",
          meta=[("Discipline", "Creative Direction, Film"), ("Scope", "Launch film"), ("Product", "MicellAIR Rose Water"), ("Format", "Video")],
-         cover="nivea/nivea-loop.webp", cover_video="nivea/nivea-loop.mp4",
+         cover="nivea/nivea-loop.webp", cover_video="nivea/nivea-loop.mp4", cover_pos="100% 50%",
          gallery=[("vc:nivea/nivea-film", 12)]),
     dict(id="bebelac", featured=False, title="Bebelac", client="Bebelac", type="Functional Campaign Film", cat="campaign",
          lead="Little ones, big days \u2014 a functional campaign film for Bebelac.",
