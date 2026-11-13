@@ -7,7 +7,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).parent))
 from data import *  # noqa
 
-ROOT = Path(__file__).parent / "site"
+ROOT = Path(__file__).parent.parent  # repo root
 e = html.escape
 
 def wh(path):
