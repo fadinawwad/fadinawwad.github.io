@@ -284,7 +284,8 @@ PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
 FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea"]  # order on 13 Nov 2026
-FEATURED_ORDER = [i for i in FEATURED_ORDER_ALL if SHOW_BOUNTEOUS or i not in BOUNTEOUS]
+FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea"]  # while Bounteous is hidden
+FEATURED_ORDER = FEATURED_ORDER_ALL if SHOW_BOUNTEOUS else FEATURED_ORDER_NO_BOUNTEOUS
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
 HERO_CARDS = ["hero/midtown-01.webp", "hero/becks-01.webp", "hero/oreo-01.webp", "hero/birkenstock.webp", "hero/amman-01.webp"]  # same fan as the coming-soon page; middle card sits on top
