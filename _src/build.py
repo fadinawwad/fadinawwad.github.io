@@ -177,7 +177,8 @@ viewer = "".join(viewer_article(i, p) for i, p in enumerate(PROJECTS))
 # ---------------------------------------------------------------- clients / awards / contact
 logos = "".join(f'<li class="logo-cell"><img src="media/clients/{c}.webp" alt="{e(c.replace("-", " ").title())}" class="{"tall" if c in TALL else ""}" loading="lazy"></li>' for c in CLIENTS)
 def aw_html(a, b, c, y, pid=None):
-    proj = f'<button class="aw__proj" data-open="{pid}" data-cursor="view" data-cursor-text="View">{e(TITLES[pid])} ↗</button>' if pid else ""
+    pids = (pid,) if isinstance(pid, str) else (pid or ())  # one project id, or a tuple of them
+    proj = "".join(f'<button class="aw__proj" data-open="{x}" data-cursor="view" data-cursor-text="View">{e(TITLES[x])} ↗</button>' for x in pids)
     return f'<li class="aw fade"><span class="aw__year">{y}</span><span class="aw__level">{e(c)}</span><span class="aw__name">{e(a)}</span><span class="aw__cat">{e(b)}</span>{proj}</li>'
 awards_html = "".join(aw_html(*a) for a in AWARDS)
 _links = ('<a href="' + LINKEDIN + '" target="_blank" rel="noopener">LinkedIn ↗</a><br>' if LINKEDIN else "") + '<a href="https://www.behance.net/fadiawwad" target="_blank" rel="noopener">Behance ↗</a>'

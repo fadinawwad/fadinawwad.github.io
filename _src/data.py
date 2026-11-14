@@ -82,16 +82,16 @@ PROJECTS = [
          gallery=[("amman/amman-01.webp", 12), ("amman/amman-02.webp", "c6")]),
 
     # ---- Archive projects (All projects page only) ----
-    dict(id="clorox-peerug", featured=False, title="Clorox Pee Rug", client="Clorox", type="Ambient Campaign", cat="campaign",
+    dict(id="clorox-peerug", featured=False, award="Loeries Silver & Bronze", title="Clorox Pee Rug", client="Clorox", type="Ambient Campaign", cat="campaign",
          lead="Handwoven carpet posters, to let you know your rug doesn\u2019t have to be your pet\u2019s toilet.",
          desc="For dog owners, the city is the toilet \u2014 but for dogs, so is your carpet. To promote Clorox\u00ae Pet Urine Remover we commissioned local artisans to handweave oriental carpet posters spotlighting the classic pee spots \u2014 a fire hydrant, a lamppost \u2014 and placed them in pet shops.",
-         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Handwoven posters, retail, film"), ("Market", "MENA"), ("Client", "Clorox")],
+         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Handwoven posters, retail, film"), ("Market", "MENA"), ("Recognition", "Loeries Silver & Bronze 2019")],
          cover="clorox/clorox-01.webp",
          gallery=[("clorox/clorox-01.webp", 12), ("vc:clorox/clorox-video-1", 12)]),
-    dict(id="clorox-junkyard", featured=False, title="Clorox Junkyard", client="Clorox", type="Product Campaign", cat="campaign",
+    dict(id="clorox-junkyard", featured=False, award="Loeries Silver & Bronze", title="Clorox Junkyard", client="Clorox", type="Product Campaign", cat="campaign",
          lead="Turning gross porcelain bathware into gorgeous porcelain heirlooms.",
          desc="To show Clorox\u00ae Bleach bringing old things back to life, we turned discarded porcelain bathware from a junkyard into beautiful, traditionally painted plates \u2014 the Junkyard Dishware Collection \u2014 tapping into the Arab love of big, generous meals.",
-         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Dishware collection, film"), ("Market", "MENA"), ("Client", "Clorox")],
+         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Dishware collection, film"), ("Market", "MENA"), ("Recognition", "Loeries Silver & Bronze 2019")],
          cover="clorox/clorox-02.webp",
          gallery=[("clorox/clorox-02.webp", 12), ("vc:clorox/clorox-video-2", 12)]),
     dict(id="mada", featured=False, award="Pikasso d\u2019Or Gold", title="Mada Telecom", client="Mada", type="Product Launch Campaign", cat="campaign",
@@ -319,7 +319,7 @@ CLIENTS = ["samsung", "coca-cola", "emirates", "porsche", "maserati", "hilton-gr
            "birkenstock", "clorox-peerug", "citibank", "orange", "skoda", "renault", "becks", "philip-morris"]
 TALL = {"nivea", "orange", "skoda", "renault", "emirates", "porsche", "maserati", "clorox-peerug", "becks"}
 
-AWARDS = [("Loeries", "Design", "Silver", "2019"), ("Loeries", "Out of Home", "Bronze", "2019"), ("Dubai Lynx", "Design", "Shortlist", "2019"),
+AWARDS = [("Loeries", "Design", "Silver", "2019", ("clorox-peerug", "clorox-junkyard")), ("Loeries", "Out of Home", "Bronze", "2019", ("clorox-peerug", "clorox-junkyard")), ("Dubai Lynx", "Design", "Shortlist", "2019"),
           ("Leo Lab", "Leo Burnett", "Gold", "2014"), ("Pikasso d’Or", "Design", "Gold", "2011", "mada")]
 
 
