@@ -112,7 +112,7 @@ PROJECTS = [
          meta=[("Discipline", "Art Direction, Design"), ("Scope", "Key visuals, social, in-store"), ("Market", "MENA"), ("Format", "Static, motion")],
          cover="becks/becks-01.webp",
          gallery=[("becks/becks-01.webp", 12), ("becks/becks-02.webp", 6), ("becks/becks-03.webp", 6)]),
-    dict(id="masarat", featured=False, title="Masarat", client="Oman National Transport Co.", type="Brand Identity", cat="brand",
+    dict(id="masarat", featured=False, title="Oman National Transport Company", client="Oman National Transport Co.", type="Brand Identity", cat="brand",
          lead="Every journey has a story — a brand identity for Oman\u2019s national transport company.",
          desc="A brand identity for Masarat, the Oman National Transport Company and the leading public transport operator in the Sultanate. The design is inspired by Oman\u2019s arabesque patterns and the lines of a transport and railway network, carried across the app, bus livery, signage and outdoor.",
          meta=[("Discipline", "Branding, Identity"), ("Scope", "Logo, livery, app, signage"), ("Market", "Oman"), ("Languages", "Arabic, English")],
@@ -289,8 +289,8 @@ PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
-FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea", "samsung", "amman", "mada", "bebelac", "clorox-peerug", "clorox-junkyard", "3d", "becks"]  # 13 Nov 2026 order + later additions at the end
-FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea", "samsung", "amman", "mada", "bebelac", "clorox-peerug", "clorox-junkyard", "3d", "becks"]  # while Bounteous is hidden
+FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea", "samsung", "amman", "mada", "bebelac", "clorox-peerug", "clorox-junkyard", "masarat", "becks"]  # 13 Nov 2026 order + later additions at the end
+FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea", "samsung", "amman", "mada", "bebelac", "clorox-peerug", "clorox-junkyard", "masarat", "becks"]  # while Bounteous is hidden
 FEATURED_ORDER = FEATURED_ORDER_ALL if SHOW_BOUNTEOUS else FEATURED_ORDER_NO_BOUNTEOUS
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
