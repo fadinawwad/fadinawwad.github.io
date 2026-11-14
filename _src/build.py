@@ -380,7 +380,6 @@ page = f'''<!DOCTYPE html>
   <div class="contact__grid">
     <div><span>Email</span><a href="mailto:{EMAIL}">{EMAIL}</a></div>
     {phone_html}
-    <div><span>Languages</span>English · Arabic</div>
   </div>
   <p class="footer-name display"><span class="line"><span data-fit="1">Fadi Awwad</span></span></p>
   <div class="footer-bar"><span>© 2026 Fadi Awwad. All rights reserved.</span><a href="#top" class="to-top">Back to top ↑</a></div>
