@@ -283,8 +283,8 @@ PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
-FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea"]  # order on 13 Nov 2026
-FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea"]  # while Bounteous is hidden
+FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea", "samsung", "amman", "mada", "bebelac"]  # 13 Nov 2026 order + later additions at the end
+FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea", "samsung", "amman", "mada", "bebelac"]  # while Bounteous is hidden
 FEATURED_ORDER = FEATURED_ORDER_ALL if SHOW_BOUNTEOUS else FEATURED_ORDER_NO_BOUNTEOUS
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
