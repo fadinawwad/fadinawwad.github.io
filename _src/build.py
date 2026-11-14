@@ -314,6 +314,8 @@ page = f'''<!DOCTYPE html>
   </section>
 
 
+{OUTLINE}
+
   <section class="work" id="work">
     <div class="work__head">
       <h2 class="kern-title"><span class="reveal"><span>The good</span></span><span class="reveal"><span class="acc">stuff.</span></span></h2>
@@ -330,7 +332,6 @@ page = f'''<!DOCTYPE html>
     <div class="work__more">{fx(f"View all projects ({len(PROJECTS):02d})", attrs='href="work.html"')}</div>
   </section>
 
-{OUTLINE}
 
   <section class="caps2" id="services" aria-label="What I do">
     <div class="caps2__sticky">
