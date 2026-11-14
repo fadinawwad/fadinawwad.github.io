@@ -23,7 +23,11 @@ def fx(label, tag="a", attrs="", dark=False):
 
 # ---------------------------------------------------------------- services
 caps_list = "".join(f'<li><button class="caps2__item{" is-on" if i == 0 else ""}" data-i="{i}"><span class="caps2__n">{i + 1:02d}</span><span class="caps2__t">{e(c["title"])}</span></button></li>' for i, c in enumerate(SERVICES))
-caps_panels = "".join(f'''<div class="caps2__panel{" is-on" if i == 0 else ""}" data-i="{i}"><span class="caps2__mt">{i + 1:02d} — {e(c["title"])}</span><p class="caps2__text">{e(c["text"])}</p><ul class="pills">{"".join(f"<li>{e(t)}</li>" for t in c["tags"])}</ul></div>''' for i, c in enumerate(SERVICES))
+def caps_text(c):
+    """Service text with its key phrase (c["acc"]) in the accent colour."""
+    t = e(c["text"])
+    return t.replace(e(c["acc"]), f'<span class="acc">{e(c["acc"])}</span>', 1) if c.get("acc") else t
+caps_panels = "".join(f'''<div class="caps2__panel{" is-on" if i == 0 else ""}" data-i="{i}"><span class="caps2__mt">{i + 1:02d} — {e(c["title"])}</span><p class="caps2__text">{caps_text(c)}</p><ul class="pills">{"".join(f"<li>{e(t)}</li>" for t in c["tags"])}</ul></div>''' for i, c in enumerate(SERVICES))
 
 # ---------------------------------------------------------------- hero
 LAZY = 'loading="lazy"'

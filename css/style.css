@@ -783,6 +783,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cursor.is-link, .cursor.on-dark.is-link { background: transparent; box-shadow: inset 0 0 0 1.5px var(--accent); }
 .statement__text .w.acc { color: var(--accent); }
 .caps2__item.is-on .caps2__n { color: var(--accent); }
+.caps2__text .acc { color: var(--accent); }
 .caps2__progress i { background: var(--accent); }
 .card__award, .pv__award { background: var(--accent); color: #fff; }
 .contact__title .reveal:last-child > span { color: var(--accent); }

@@ -331,10 +331,10 @@ WALL_COLS = [
 
 
 SERVICES = [
-    dict(title="Digital Products", text="I design intuitive, expressive digital products — websites, mobile and apps — shaped by strong visual direction and real user needs.",
+    dict(title="Digital Products", acc="websites, mobile and apps", text="I design intuitive, expressive digital products — websites, mobile and apps — shaped by strong visual direction and real user needs.",
          tags=["UI/UX Design", "Web & Mobile", "App Design", "Design Systems", "Prototyping in Figma", "AI-assisted Workflows"]),
-    dict(title="Brand Identity", text="I build identity systems that give brands clarity and distinction — thoughtful visuals with structure that lasts.",
+    dict(title="Brand Identity", acc="clarity and distinction", text="I build identity systems that give brands clarity and distinction — thoughtful visuals with structure that lasts.",
          tags=["Brand Identity", "Logo & Mark", "Typography & Colour", "Guidelines"]),
-    dict(title="Campaigns", text="I lead ideas from concept to execution — campaigns and art direction that stay consistent across every touchpoint.",
+    dict(title="Campaigns", acc="across every touchpoint", text="I lead ideas from concept to execution — campaigns and art direction that stay consistent across every touchpoint.",
          tags=["Creative Direction", "Campaign Concepts", "Art Direction", "Print & OOH", "Social & Motion"]),
 ]
