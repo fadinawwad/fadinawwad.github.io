@@ -227,7 +227,7 @@ MASARAT_FEATURE = f'''  <section class="expand" aria-label="Featured image">
     <div class="expand__sticky">
       <div class="expand__img"><img src="media/masarat/masarat-01.webp" alt="Masarat bus shelter and app" loading="lazy"></div>
       <div class="expand__copy" data-dark>
-        <span class="eyebrow">Brand — Masarat</span>
+        <span class="eyebrow">Brand concept — Oman National Transport Company</span>
         <p class="expand__title display">Every journey<br>has a story.</p>
         {fx("View the project", tag="button", attrs='data-open="masarat"', dark=True)}
       </div>
