@@ -920,3 +920,11 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .cycle { position: relative; display: block; width: 100%; height: 100%; }
 .cycle img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); }
 .cycle img.is-on { opacity: 1; }
+/* Tighter spacing around What I do: on desktop the pinned block is 70vh tall and pins
+   15vh from the top (was a full 100vh with the content centred), so less empty space
+   shows above and below it. */
+.work { padding-bottom: clamp(60px, 6vw, 100px); }
+@media (min-width: 901px) {
+  .caps2 { height: 160vh; }
+  .caps2__sticky { top: 15vh; height: 70vh; }
+}

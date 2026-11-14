@@ -323,9 +323,11 @@
     olScroll();
     // What I do: pinned list, statements fade per item
     $$('.caps2').forEach(c => {
-      const r = c.getBoundingClientRect(); const total = r.height - vh;
+      const r = c.getBoundingClientRect(), st = $('.caps2__sticky', c);
+      const pin = parseFloat(getComputedStyle(st).top) || 0;   // where the block pins (15vh on desktop)
+      const total = r.height - st.offsetHeight;
       if (total <= 0) return;
-      const p = clamp(-r.top / total, 0, 0.9999);
+      const p = clamp((pin - r.top) / total, 0, 0.9999);
       const items = $$('.caps2__item', c), panels = $$('.caps2__panel', c);
       const i = Math.floor(p * panels.length);
       items.forEach((b, k) => b.classList.toggle('is-on', k === i));
