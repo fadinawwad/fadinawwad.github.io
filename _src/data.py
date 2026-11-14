@@ -82,12 +82,18 @@ PROJECTS = [
          gallery=[("amman/amman-01.webp", 12), ("amman/amman-02.webp", "c6")]),
 
     # ---- Archive projects (All projects page only) ----
-    dict(id="clorox", featured=False, award="Loeries Silver & Bronze", title="Clorox", client="Clorox", type="Integrated Campaign", cat="campaign",
-         lead="Two ideas that made a household cleaner impossible to ignore — Pee Rug and the Junkyard Dishware Collection.",
-         desc="Pee Rug: for dog owners, the city is the toilet — but for dogs, so is your carpet. To promote Clorox\u00ae Pet Urine Remover we commissioned local artisans to handweave oriental carpet posters spotlighting the classic pee spots — a fire hydrant, a lamppost — and placed them in pet shops. Junkyard Dishware: to show Clorox\u00ae Bleach bringing old things back to life, we turned discarded porcelain bathware from a junkyard into beautiful, traditionally painted plates — tapping into the Arab love of big, generous meals.",
-         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Ambient, retail, film"), ("Market", "MENA"), ("Recognition", "Loeries Silver & Bronze 2019")],
+    dict(id="clorox-peerug", featured=False, title="Clorox Pee Rug", client="Clorox", type="Ambient Campaign", cat="campaign",
+         lead="Handwoven carpet posters, to let you know your rug doesn\u2019t have to be your pet\u2019s toilet.",
+         desc="For dog owners, the city is the toilet \u2014 but for dogs, so is your carpet. To promote Clorox\u00ae Pet Urine Remover we commissioned local artisans to handweave oriental carpet posters spotlighting the classic pee spots \u2014 a fire hydrant, a lamppost \u2014 and placed them in pet shops.",
+         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Handwoven posters, retail, film"), ("Market", "MENA"), ("Client", "Clorox")],
          cover="clorox/clorox-01.webp",
-         gallery=[("clorox/clorox-01.webp", 12), ("vc:clorox/clorox-video-1", 6), ("vc:clorox/clorox-video-2", 6), ("clorox/clorox-02.webp", 12)]),
+         gallery=[("clorox/clorox-01.webp", 12), ("vc:clorox/clorox-video-1", 12)]),
+    dict(id="clorox-junkyard", featured=False, title="Clorox Junkyard", client="Clorox", type="Product Campaign", cat="campaign",
+         lead="Turning gross porcelain bathware into gorgeous porcelain heirlooms.",
+         desc="To show Clorox\u00ae Bleach bringing old things back to life, we turned discarded porcelain bathware from a junkyard into beautiful, traditionally painted plates \u2014 the Junkyard Dishware Collection \u2014 tapping into the Arab love of big, generous meals.",
+         meta=[("Discipline", "Art Direction, Design"), ("Scope", "Dishware collection, film"), ("Market", "MENA"), ("Client", "Clorox")],
+         cover="clorox/clorox-02.webp",
+         gallery=[("clorox/clorox-02.webp", 12), ("vc:clorox/clorox-video-2", 12)]),
     dict(id="mada", featured=False, award="Pikasso d\u2019Or Gold", title="Mada Telecom", client="Mada", type="Product Launch Campaign", cat="campaign",
          lead="This is not a mouse. This is not a soap. It\u2019s a Biscuit — the launch of Mada\u2019s pocket Wi-Fi router.",
          desc="A Gold award winner at the Pikasso d\u2019Or awards for creativity. Mada launched a product that was new to the market and unfamiliar to people, so it was shown to focus groups who were asked to guess what it was. Their answers — a mouse, a soap, a mobile — became the main message of the campaign, across print, outdoor and retail.",
@@ -283,8 +289,8 @@ PROJECTS_ARCHIVE = [p for p in PROJECTS if p["id"] in ARCHIVED]
 PROJECTS = [p for p in PROJECTS if p["id"] not in ARCHIVED]
 
 # Homepage "Selected work" — order shown on the homepage
-FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea", "samsung", "amman", "mada", "bebelac"]  # 13 Nov 2026 order + later additions at the end
-FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea", "samsung", "amman", "mada", "bebelac"]  # while Bounteous is hidden
+FEATURED_ORDER_ALL = ["dfin", "sandals", "birkenstock", "wingstop", "midtown", "oreo", "primal", "budweiser", "sobha", "nivea", "samsung", "amman", "mada", "bebelac", "clorox-peerug", "clorox-junkyard"]  # 13 Nov 2026 order + later additions at the end
+FEATURED_ORDER_NO_BOUNTEOUS = ["oreo", "primal", "budweiser", "birkenstock", "sobha", "nivea", "samsung", "amman", "mada", "bebelac", "clorox-peerug", "clorox-junkyard"]  # while Bounteous is hidden
 FEATURED_ORDER = FEATURED_ORDER_ALL if SHOW_BOUNTEOUS else FEATURED_ORDER_NO_BOUNTEOUS
 # Previous homepage list (12): ["dfin", "sandals", "progress", "primal", "oreo", "budweiser", "wingstop", "midtown", "sobha", "bebelac", "birkenstock", "amman"]
 
@@ -310,10 +316,10 @@ WORDS_ARCHIVE = [
 ]
 
 CLIENTS = ["samsung", "coca-cola", "emirates", "porsche", "maserati", "hilton-grand-vacations", "nivea", "oreo", "budweiser",
-           "birkenstock", "clorox", "citibank", "orange", "skoda", "renault", "becks", "philip-morris"]
-TALL = {"nivea", "orange", "skoda", "renault", "emirates", "porsche", "maserati", "clorox", "becks"}
+           "birkenstock", "clorox-peerug", "citibank", "orange", "skoda", "renault", "becks", "philip-morris"]
+TALL = {"nivea", "orange", "skoda", "renault", "emirates", "porsche", "maserati", "clorox-peerug", "becks"}
 
-AWARDS = [("Loeries", "Design", "Silver", "2019", "clorox"), ("Loeries", "Out of Home", "Bronze", "2019", "clorox"), ("Dubai Lynx", "Design", "Shortlist", "2019"),
+AWARDS = [("Loeries", "Design", "Silver", "2019"), ("Loeries", "Out of Home", "Bronze", "2019"), ("Dubai Lynx", "Design", "Shortlist", "2019"),
           ("Leo Lab", "Leo Burnett", "Gold", "2014"), ("Pikasso d’Or", "Design", "Gold", "2011", "mada")]
 
 
