@@ -377,7 +377,6 @@ page = f'''<!DOCTYPE html>
   </div>
   <div class="contact__grid">
     <div><span>Email</span><a href="mailto:{EMAIL}">{EMAIL}</a></div>
-    <div><span>Based in</span>Toronto, Canada<br><span style="display:inline;margin:0" data-clock></span></div>
     {phone_html}
     <div><span>Languages</span>English · Arabic</div>
   </div>

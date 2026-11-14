@@ -889,17 +889,17 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .work { padding-bottom: clamp(110px, 12vw, 190px); }
 .work__more { margin-top: clamp(50px, 6vw, 90px); }
 /* Stronger dark overlay so the white text on feature images is always legible */
-.expand__copy::before { height: 85vh; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.45) 40%, rgba(0,0,0,.82) 100%); }
+.expand__copy::before { height: 85vh; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.32) 40%, rgba(0,0,0,.66) 100%); }
 .expand__copy { text-shadow: 0 2px 24px rgba(0,0,0,.35); }
 .expand__copy .fx { text-shadow: none; }
 @media (max-width: 900px) {
-  .expand__copy::before { height: 95%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.5) 35%, rgba(0,0,0,.88) 100%); }
+  .expand__copy::before { height: 95%; background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.36) 35%, rgba(0,0,0,.7) 100%); }
 }
 @media (max-width: 900px) {
   /* text stays over the image, with a much darker overlay behind it */
-  .expand__img::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.18); pointer-events: none; }
+  .expand__img::after { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,.1); pointer-events: none; }
   .expand__copy::before { height: 120%; left: -20px; right: -20px; bottom: -22px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.7) 30%, rgba(0,0,0,.9) 60%, rgba(0,0,0,.94) 100%); }
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,.45) 30%, rgba(0,0,0,.66) 60%, rgba(0,0,0,.74) 100%); }
   .expand__copy { text-shadow: 0 2px 18px rgba(0,0,0,.5); }
 }
 
