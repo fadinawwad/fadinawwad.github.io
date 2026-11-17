@@ -380,11 +380,11 @@ page = f'''<!DOCTYPE html>
     <div><span>Email</span><a href="mailto:{EMAIL}">{EMAIL}</a></div>
     {phone_html}
     <div class="twist">
-      <div class="twist__stage" tabindex="0" role="img" aria-label="A cookie you can play with: drag sideways to spin it, drag down to twist it open">
+      <div class="twist__stage" tabindex="0" role="img" aria-label="A cookie you can play with: drag sideways to spin it">
         <div class="twist__shadow"></div><div class="twist__cookie"></div>
       </div>
       <p class="twist__line">Before you go, twist one.</p>
-      <p class="twist__hint">Flick to spin · Pull down to open</p>
+      <p class="twist__hint">Flick to spin</p>
     </div>
   </div>
   <p class="footer-name display"><span class="line"><span data-fit="1">Fadi Awwad</span></span></p>

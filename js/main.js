@@ -555,7 +555,7 @@
   addEventListener('load', ready);
   ready();
 
-  // ---- Twist the Oreo (contact footer): flick to spin like a coin, pull down to twist it open
+  // ---- Twist the Oreo (contact footer): flick to spin like a coin
   document.querySelectorAll('.twist__stage').forEach(stage => {
     const cookie = stage.querySelector('.twist__cookie'), shadow = stage.querySelector('.twist__shadow');
     const T = 7, STEP = 1.2, CREAM = 3;
@@ -580,9 +580,8 @@
     stage.addEventListener('pointermove', e => {
       if (!drag) return;
       const now = performance.now(), dt = Math.max(8, now - lt), dx = e.clientX - lx;
-      if (!mode && Math.hypot(e.clientX - sx, e.clientY - sy) > 6) mode = Math.abs(e.clientY - sy) > Math.abs(e.clientX - sx) * 1.2 && e.clientY > sy ? 'twist' : 'spin';
+      if (!mode && Math.hypot(e.clientX - sx, e.clientY - sy) > 6) mode = 'spin';
       if (mode === 'spin') { rotY += dx * 0.7; velY = dx * 0.7 * (16 / dt); }
-      if (mode === 'twist') open = Math.max(0, Math.min(1, (e.clientY - sy) / 120));
       lx = e.clientX; lt = now;
     });
     const end = () => { if (!drag) return; drag = false; if (mode === null) velY = 22; mode = null; };

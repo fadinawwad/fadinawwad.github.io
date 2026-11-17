@@ -932,7 +932,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 
 /* ---- Twist the Oreo: a small toy in the contact footer (photos: Unsplash) ---- */
 .contact__grid > div.twist { grid-column: 9 / -1; justify-self: end; align-self: start; margin-top: -40px; text-align: center; width: 240px; }
-.twist__stage { position: relative; height: 220px; perspective: 900px; touch-action: none; cursor: grab; outline: none; }
+.twist__stage { position: relative; height: 220px; perspective: 900px; touch-action: pan-y; cursor: grab; outline: none; }
 .twist__stage:active { cursor: grabbing; }
 .twist__stage:focus-visible { box-shadow: 0 0 0 2px var(--accent); border-radius: 12px; }
 .twist__shadow { position: absolute; left: 50%; bottom: 6px; width: 62%; height: 14px; transform: translateX(-50%); border-radius: 50%;
