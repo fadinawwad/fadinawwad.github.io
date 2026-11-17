@@ -611,4 +611,158 @@
     }
     frame();
   });
+
+  // ---- Work Experience timeline
+  (() => {
+  // newest first: 01 is today, the line runs back in time to the right
+  const dataEl = document.getElementById('wlData');
+  if (!dataEl) return;
+  const ROLES = JSON.parse(dataEl.textContent);
+  // two-line role titles, split where it reads best
+  const SPLIT = { 'Associate Creative Director':'Associate<br>Creative Director', 'Lead Designer':'Lead<br>Designer', 'Senior Designer':'Senior<br>Designer',
+                  'Senior Art Director':'Senior<br>Art Director', 'Art Director':'Art<br>Director', 'Junior Art Director':'Junior<br>Art Director' };
+  const STAR = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17l-6 3.3 1.3-6.7-5-4.6 6.8-.8z"/></svg>';
+  const sec = document.getElementById('experience'), scroll = document.getElementById('wlScroll'), track = document.getElementById('wlTrack');
+  const svg = document.getElementById('wlSvg');
+  const bar = document.getElementById('wlBar'), fade = document.getElementById('wlFade');
+  const NS = 'http://www.w3.org/2000/svg', mq = matchMedia('(max-width: 900px)');
+  let mobile, items = [], path, len, dot, ring, active = -1, xs = [], lut = [];
+
+  function build() {
+    mobile = mq.matches;
+    track.querySelectorAll('.wl__item').forEach(n => n.remove()); svg.innerHTML = ''; items = []; active = -1;
+    const sp = parseFloat(getComputedStyle(scroll).paddingLeft) || 0;
+    const vw = scroll.clientWidth - sp * 2;
+    const step = mobile ? 230 : (vw - 190) / (ROLES.length - 1);
+    const startX = mobile ? 26 : 4;
+    const W = mobile ? startX + step * (ROLES.length - 1) + 260 : vw;
+    let H = mobile ? 370 : 400, base = mobile ? 318 : 352;
+    track.style.width = W + 'px'; track.style.height = H + 'px';
+    track.style.setProperty('--tw', Math.max(120, step * 2 - 90) + 'px');
+    track.style.setProperty('--pw', (mobile ? 210 : Math.min(360, step * 2 - 30)) + 'px');
+    svg.setAttribute('width', W); svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+    // labels sit at staggered heights above the line, like stepping stones
+    const lift = mobile ? [0, 70, 10, 80, 0, 66, 14, 76] : [0, 112, 12, 120, 4, 108, 16, 116];  // neighbours never share a band
+    xs = ROLES.map((_, i) => startX + i * step);
+    ROLES.forEach((r, i) => {
+      const b = document.createElement('button'); b.type = 'button'; b.className = 'wl__item';
+      const yrs = `${r.from}–${r.to ?? 'Now'}`;
+      b.innerHTML = `<span class="wl__t"><span class="wl__r">${SPLIT[r.role] || r.role}</span>` +
+        `<span class="wl__m">${r.co}<br>${r.city ? r.city + ' · ' : ''}${yrs}</span>` +
+        `<span class="wl__p"><span>${r.sum}</span></span></span>`;
+      b.setAttribute('aria-label', `${r.role}, ${r.co}${r.city ? ', ' + r.city : ''}, ${yrs}`);
+      b.style.left = xs[i] + 'px'; b.style.bottom = (H - base + 40 + lift[i % lift.length]) + 'px';
+      b.style.transitionDelay = (0.25 + i * 0.09) + 's';
+      setTimeout(() => b.style.transitionDelay = '', 2500);
+      b.addEventListener('mouseenter', () => { if (!mobile) { setActive(i); moveDot(at(xs[i] + 30)); } });
+      b.addEventListener('focus', () => { setActive(i); moveDot(at(xs[i] + 30)); });
+      b.addEventListener('click', () => { setActive(i); if (mobile) scroll.scrollTo({ left: xs[i] - scroll.clientWidth * 0.12, behavior:'smooth' }); });
+      track.appendChild(b); items.push(b);
+    });
+
+    // make room above the steps for the tallest one when it is open, so it never reaches the headline
+    const below = H - base;
+    let need = 0;
+    items.forEach(b => {
+      const sp = b.querySelector('.wl__p > span');
+      const open = b.offsetHeight + sp.scrollHeight + 8;
+      need = Math.max(need, parseFloat(b.style.bottom) + open);
+    });
+    const room = need + (mobile ? 36 : 28);
+    if (room > H) { base += room - H; H = room; }
+    track.style.height = H + 'px';
+    svg.setAttribute('height', H); svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+    // one continuous, unbroken curve: soft waves that pass under each role
+    const wob = [0, -22, 16, -14, 22, -18, 12, -16];
+    let px = 0, py = base + 6, d = `M${px},${py}`;
+    const s = 13;
+    ROLES.forEach((r, i) => {
+      const x = xs[i] + 30, y = base + wob[i], c = (x - px) * 0.45;
+      d += ` C${px + c},${py} ${x - c},${y} ${x},${y}`;
+      px = x; py = y;
+    });
+    const c = (W - px) * 0.45;
+    d += ` C${px + c},${py} ${W - c},${base + 4} ${W},${base + 4}`;
+
+    path = document.createElementNS(NS, 'path'); path.setAttribute('d', d); path.setAttribute('class', 'wl__path'); svg.appendChild(path);
+    ring = document.createElementNS(NS, 'circle'); ring.setAttribute('r', 13); ring.setAttribute('class', 'wl__ring'); svg.appendChild(ring);
+    dot = document.createElementNS(NS, 'circle'); dot.setAttribute('r', 5); dot.setAttribute('class', 'wl__dot'); svg.appendChild(dot);
+    len = path.getTotalLength();
+    // x → length along the path (first time the line reaches that x), so the dot can follow the pointer
+    lut = []; let maxX = -1;
+    for (let l = 0; l <= len; l += 2) { const p = path.getPointAtLength(l); if (p.x > maxX) { maxX = p.x; lut.push([p.x, l]); } }
+    path.style.strokeDasharray = len;
+    path.style.strokeDashoffset = (sec.classList.contains('is-in') || mobile) ? 0 : len;
+
+    if (mobile) { scroll.scrollLeft = 0; onScroll(); } else { setActive(0); moveDot(at(xs[0] + 30)); }
+  }
+
+  const at = x => { let lo = 0, hi = lut.length - 1; while (lo < hi) { const m = (lo + hi) >> 1; if (lut[m][0] < x) lo = m + 1; else hi = m; } return lut[lo][1]; };
+  function moveDot(l) { const p = path.getPointAtLength(l); for (const c of [dot, ring]) { c.setAttribute('cx', p.x); c.setAttribute('cy', p.y); } }
+  function setActive(i) {
+    if (i === active) return; active = i;
+    items.forEach((b, k) => b.classList.toggle('is-on', k === i));
+    sec.classList.add('has-on');
+    // hide any step the opened one will grow over (it opens upwards)
+    const a = items[i], ar = a.getBoundingClientRect(), ps = a.querySelector('.wl__p'), sp = ps.firstElementChild;
+    const grow = sp.scrollHeight + 8 - ps.getBoundingClientRect().height;
+    const top = ar.top - Math.max(0, grow), left = ar.left - 8, right = ar.left + Math.max(ar.width, sp.scrollWidth) + 8;
+    items.forEach((b, k) => {
+      if (k === i) { b.classList.remove('is-covered'); return; }
+      const r = b.getBoundingClientRect();
+      b.classList.toggle('is-covered', r.left < right && r.right > left && r.top < ar.bottom && r.bottom > top);
+    });
+  }
+  const nearest = x => { let k = 0, bd = 1e9; xs.forEach((v, i) => { const d = Math.abs(x - (v + 50)); if (d < bd) { bd = d; k = i; } }); return k; };
+
+  // desktop: the dot follows the pointer along the line; the closest role lights up
+  scroll.addEventListener('pointermove', e => {
+    if (mobile || e.target.closest('.wl__item')) return;
+    const x = e.clientX - track.getBoundingClientRect().left;
+    moveDot(at(x)); setActive(nearest(x));
+  });
+  scroll.addEventListener('pointerleave', () => { if (!mobile) { setActive(0); moveDot(at(xs[0] + 30)); } });
+
+  // mobile: the line draws itself as you swipe; the reading point sits a fifth in from the left
+  let swiped = false;
+  function onScroll() {
+    if (!mobile) return;
+    const vw = scroll.clientWidth, max0 = scroll.scrollWidth - vw, p0 = Math.min(1, scroll.scrollLeft / Math.max(1, max0));
+    const x = xs[0] + 30 + p0 * (xs[xs.length - 1] - xs[0]);   // first step at the start of the swipe, last at the end
+    path.style.strokeDashoffset = Math.max(0, len - at(scroll.scrollLeft + vw * 0.9));
+    moveDot(at(x)); setActive(nearest(x));
+    const max = scroll.scrollWidth - vw, p = scroll.scrollLeft / Math.max(1, max);
+    bar.style.transform = `scaleX(${Math.max(.12, p)})`;
+    fade.style.opacity = p > .97 ? 0 : 1;
+    fade.style.top = scroll.offsetTop + 'px'; fade.style.height = scroll.offsetHeight + 'px';
+    if (!swiped && scroll.scrollLeft > 40) { swiped = true; sec.classList.add('is-swiped'); }
+  }
+  scroll.addEventListener('scroll', () => requestAnimationFrame(onScroll), { passive:true });
+
+  // first time on screen: the line draws in (desktop) and the labels rise; mobile gets one small tug
+  new IntersectionObserver((es, io) => {
+    if (!es[0].isIntersecting) return; io.disconnect();
+    sec.classList.add('is-in');
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!mobile) {
+      if (reduce) { path.style.strokeDashoffset = 0; return; }
+      const t0 = performance.now(), dur = 1800;
+      const tick = t => { const k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 3); path.style.strokeDashoffset = len * (1 - e); if (k < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick);
+    } else if (!reduce) {
+      setTimeout(() => {
+        if (scroll.scrollLeft > 0) return;
+        scroll.scrollTo({ left: 120, behavior:'smooth' });
+        setTimeout(() => scroll.scrollTo({ left: 0, behavior:'smooth' }), 650);
+        setTimeout(() => { swiped = false; sec.classList.remove('is-swiped'); }, 1500);
+      }, 1100);
+    }
+  }, { threshold:.35 }).observe(sec);
+
+  build();
+  let rt, lastW = innerWidth;
+  addEventListener('resize', () => { if (innerWidth === lastW) return; lastW = innerWidth; clearTimeout(rt); rt = setTimeout(build, 150); });
+})();
 })();

@@ -344,3 +344,23 @@ SERVICES = [
     dict(title="Campaigns", acc="across every touchpoint", text="I lead ideas from concept to execution — campaigns and art direction that stay consistent across every touchpoint.",
          tags=["Creative Direction", "Campaign Concepts", "Art Direction", "Print & OOH", "Social & Motion"]),
 ]
+
+# Work Experience timeline: newest first. 'sum' opens under the step when the dot reaches it.
+EXPERIENCE = [
+    dict(co='Bounteous', role='Associate Creative Director', city='Toronto', start=2025, end=None,
+         sum='Leading creative direction for digital products and campaigns for North American brands — setting the vision, guiding design teams and shaping AI-assisted product concepts from first idea to polished UI.'),
+    dict(co='Bounteous', role='Lead Designer', city='Toronto', start=2022, end=2025,
+         sum='Led UI/UX end to end — from user flows and wireframes to design systems and high-fidelity prototypes — mentoring designers and partnering with strategy and engineering to turn complex products into clear, accessible experiences.'),
+    dict(co='Bounteous', role='Senior Designer', city='Toronto', start=2021, end=2022,
+         sum='Brought over a decade of campaign thinking to UI/UX in Toronto, designing websites and digital experiences for enterprise clients.'),
+    dict(co='C2 Comms', role='Senior Art Director', city='Dubai', start=2019, end=2020,
+         sum='Led the creative department’s move to a digital-first approach — winning new business, growing the team and shaping cross-channel work with audience, channel and analytics insight.'),
+    dict(co='FCB Global', role='Art Director', city='Dubai', start=2016, end=2019,
+         sum='Took regional campaigns from idea to execution for brands including Oreo, Budweiser and Clorox, and led the creative for new-business pitches.'),
+    dict(co='Touchstone', role='Art Director', city='Dubai', start=2015, end=2016,
+         sum='Owned campaigns from first concept to final adaptation, including event branding and marketing materials, always on tight deadlines.'),
+    dict(co='Leo Burnett', role='Art Director', city='', start=2013, end=2015,
+         sum='Created and directed online films and TVCs for local and global brands that lifted awareness and sales, and guided the creative team from layout to production.'),
+    dict(co='Saatchi & Saatchi', role='Junior Art Director', city='', start=2009, end=2012,
+         sum='Started my career revamping a client’s brand identity and designing its launch campaign, plus launch work for Samsung.'),
+]

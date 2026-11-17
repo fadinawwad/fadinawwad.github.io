@@ -244,6 +244,15 @@ MADA_FEATURE = f'''  <section class="expand expand--b" aria-label="Featured imag
       </div>
     </div>
   </section>'''
+import json as _json
+_xp = [dict(co=x["co"], role=x["role"], city=x["city"], **{"from": x["start"], "to": x["end"]}, sum=x["sum"]) for x in EXPERIENCE]
+EXPERIENCE_HTML = f'''  <section class="wl" id="experience" aria-label="Work experience">
+    <div class="wl__head"><h2 class="wl__title">Work Experience</h2></div>
+    <div class="wl__scroll" id="wlScroll"><div class="wl__track" id="wlTrack"><svg class="wl__svg" id="wlSvg"></svg></div></div>
+    <div class="wl__fade" id="wlFade"></div>
+    <div class="wl__hint"><span class="arrow">←</span> Swipe to go back in time <span class="bar"><i id="wlBar"></i></span></div>
+    <script type="application/json" id="wlData">{_json.dumps(_xp, ensure_ascii=False).replace("</", "<\\/")}</script>
+  </section>'''
 SHOW_WALL = False  # Index wall (kept for later)
 SHOW_WORDS = False  # </> · UI/UX · TL;DR carousel (kept for later)
 FILM = f'''  <section class="film" aria-label="Nivea film">
@@ -348,6 +357,8 @@ page = f'''<!DOCTYPE html>
 {wall_html() if SHOW_WALL else ""}
 
 {FILM if SHOW_NIVEA else ""}
+
+{EXPERIENCE_HTML}
 
 {PROGRESS_FEATURE if SHOW_BOUNTEOUS else ""}
 {MADA_FEATURE}

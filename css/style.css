@@ -958,3 +958,58 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 /* award badge above the Mada feature headline */
 .expand__award { position: static; display: inline-flex; margin: 0 0 16px; }
 .expand__copy .expand__award + .eyebrow { display: block; }
+
+/* ---- Work Experience timeline (newest on the left; hover on desktop, swipe on mobile) ---- */
+.wl { --panel:#efefed; --muted:#8c8c8c; position:relative; background:var(--panel); padding:clamp(48px,6vw,90px) 0 clamp(36px,4vw,60px); overflow:hidden; }
+  .wl__head { display:flex; justify-content:space-between; align-items:flex-start; gap:20px; padding:0 var(--pad); }
+  .wl__title { margin:0; font-weight:900; letter-spacing:-.055em; line-height:.9; font-size:clamp(44px,6.4vw,100px); }
+
+  .wl__scroll { position:relative; margin-top:clamp(10px,2vw,30px); }
+  .wl__track { position:relative; }
+  .wl__svg { position:absolute; inset:0; overflow:visible; pointer-events:none; }
+  .wl__path { fill:none; stroke:var(--fg); stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  .wl__dot { fill:var(--accent); }
+  .wl__ring { fill:var(--accent); opacity:.16; }
+
+  .wl__item { position:absolute; display:flex; align-items:flex-start; gap:8px; padding:0; border:0; background:none; text-align:left; font:inherit; color:inherit; cursor:pointer;
+    transition: color .25s, opacity .5s, transform .6s cubic-bezier(.2,.8,.2,1); }
+  .wl__t { display:block; padding-top:1px; max-width:var(--tw, 150px); }
+  .wl__item.is-on .wl__t { max-width:var(--pw, 240px); }
+  .wl__r { display:block; font-size:clamp(13px,1vw,15px); font-weight:700; text-transform:uppercase; line-height:1.08; }
+  .wl__m { display:block; margin-top:4px; font-size:10.5px; font-weight:500; text-transform:uppercase; letter-spacing:.04em; color:var(--muted); line-height:1.3; white-space:nowrap; }
+  .wl__aw { display:inline-flex; align-items:center; gap:4px; margin-top:5px; font-size:10px; font-weight:700; color:var(--accent); }
+  .wl__aw svg { width:10px; height:10px; }
+  .wl__item.is-on { color:var(--accent); }
+  .wl__item.is-on .wl__m { color:var(--accent); opacity:.75; }
+  .wl__item:focus-visible { outline:2px solid var(--accent); outline-offset:6px; }
+  .wl:not(.is-in) .wl__item { opacity:0; transform:translateY(12px); }
+
+
+  /* the step under the dot opens: its text rises and a short summary unfolds below it */
+  .wl__item { z-index:1; }
+  .wl__item.is-on { z-index:3; }
+  .wl__t { position:relative; }
+  .wl__p { display:grid; grid-template-rows:0fr; transition:grid-template-rows .45s cubic-bezier(.2,.8,.2,1); }
+  .wl__p > span { overflow:hidden; font-size:13px; line-height:1.45; color:#3f3f3f; text-transform:none; font-weight:450; opacity:0; transform:translateY(-4px);
+    transition:opacity .35s .08s, transform .45s cubic-bezier(.2,.8,.2,1); max-width:var(--pw, 240px); }
+  .wl__item.is-on .wl__p { grid-template-rows:1fr; }
+  .wl__item.is-on .wl__p > span { opacity:1; transform:none; padding-top:8px; }
+  .wl.has-on .wl__item:not(.is-on) { opacity:.38; }
+  .wl.has-on .wl__item.is-covered { opacity:0; pointer-events:none; }
+  .wl__item { transition: color .25s, opacity .35s, transform .6s cubic-bezier(.2,.8,.2,1); }
+  .wl__r { font-size:clamp(14px,1.1vw,17px); }
+  .wl__hint, .wl__fade { display:none; }
+  @media (min-width: 901px) { .wl__scroll { padding:0 var(--pad); } }
+  @media (max-width: 900px) {
+    .wl__head { flex-direction:column; gap:14px; }
+    .wl__scroll { overflow-x:auto; overflow-y:hidden; -webkit-overflow-scrolling:touch; scrollbar-width:none; overscroll-behavior-x:contain; }
+    .wl__scroll::-webkit-scrollbar { display:none; }
+    .wl__fade { display:block; position:absolute; right:0; width:44px; pointer-events:none; background:linear-gradient(to right, rgba(239,239,237,0), var(--panel)); transition:opacity .3s; }
+    .wl__hint { display:flex; align-items:center; gap:12px; padding:10px var(--pad) 0; font-size:13px; font-weight:600; }
+    .wl__hint .arrow { display:inline-block; color:var(--accent); animation: wlNudge 1.5s ease-in-out infinite; }
+    .wl__hint .bar { flex:1; height:2px; background:#dcdcd9; border-radius:2px; position:relative; overflow:hidden; }
+    .wl__hint .bar i { position:absolute; inset:0; background:var(--fg); transform-origin:left; transform:scaleX(.12); }
+    .wl.is-swiped .wl__hint .arrow { animation:none; }
+  }
+  @keyframes wlNudge { 0%,100% { transform:translateX(0); } 50% { transform:translateX(-7px); } }
+  @media (prefers-reduced-motion: reduce) { .wl__hint .arrow { animation:none; } .wl:not(.is-in) .wl__item { opacity:1; transform:none; } }
