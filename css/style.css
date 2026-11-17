@@ -1013,3 +1013,21 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
   }
   @keyframes wlNudge { 0%,100% { transform:translateX(0); } 50% { transform:translateX(-7px); } }
   @media (prefers-reduced-motion: reduce) { .wl__hint .arrow { animation:none; } .wl:not(.is-in) .wl__item { opacity:1; transform:none; } }
+
+/* timeline circles: empty on the line, pink when that role is open */
+.wl__svg .wl__node { pointer-events:auto; cursor:pointer; transition: opacity .4s var(--d, 0s); }
+.wl__node .hit { fill:transparent; }
+.wl__node .o { fill:var(--panel); stroke:var(--fg); stroke-width:1.6; transition: fill .25s, stroke .25s, r .25s; }
+.wl__node:hover .o { r:9; }
+.wl__node.is-on .o { fill:var(--accent); stroke:var(--accent); r:8; }
+.wl:not(.is-in) .wl__node { opacity:0; }
+.wl__node.is-ahead { opacity:0; pointer-events:none; }
+.wl__hint-d { display:none; }
+@media (min-width: 901px) {
+  .wl .wl__scroll { margin-top:0; }
+  .wl__hint { display:flex; align-items:center; gap:10px; padding:4px var(--pad) 0; font-size:13px; font-weight:600; }
+  .wl__hint .arrow, .wl__hint .bar, .wl__hint-m { display:none; }
+  .wl__hint-d { display:inline-flex; align-items:center; gap:10px; }
+  .wl__hint-d i { width:12px; height:12px; border-radius:50%; border:1.6px solid var(--fg); display:inline-block; }
+}
+.wl__node, .wl__node:focus { outline:none; }

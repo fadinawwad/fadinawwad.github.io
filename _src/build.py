@@ -250,7 +250,7 @@ EXPERIENCE_HTML = f'''  <section class="wl" id="experience" aria-label="Work exp
     <div class="wl__head"><h2 class="wl__title">Work Experience</h2></div>
     <div class="wl__scroll" id="wlScroll"><div class="wl__track" id="wlTrack"><svg class="wl__svg" id="wlSvg"></svg></div></div>
     <div class="wl__fade" id="wlFade"></div>
-    <div class="wl__hint"><span class="arrow">←</span> Swipe to go back in time <span class="bar"><i id="wlBar"></i></span></div>
+    <div class="wl__hint"><span class="wl__hint-d"><i></i>Click a circle to see what I did there</span><span class="arrow">←</span> <span class="wl__hint-m">Swipe to go back in time</span> <span class="bar"><i id="wlBar"></i></span></div>
     <script type="application/json" id="wlData">{_json.dumps(_xp, ensure_ascii=False).replace("</", "<\\/")}</script>
   </section>'''
 SHOW_WALL = False  # Index wall (kept for later)
