@@ -322,6 +322,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .contact__grid span { display: block; color: #9a9a9a; font-size: 12px; font-weight: 600; margin-bottom: 6px; }
 .contact__grid a:hover { text-decoration: underline; text-underline-offset: 3px; }
 .footer-name { margin: clamp(50px, 7vw, 100px) 0 0; white-space: nowrap; color: var(--bg); font-weight: 900; }
+.footer-name .line { display: block; }  /* block so the fit script can measure the width (was inline, so the name sized to 0) */
 .footer-bar { display: flex; justify-content: space-between; font-size: 13px; color: #9a9a9a; margin-top: 18px; }
 .to-top:hover { color: #fff; }
 
@@ -927,4 +928,29 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (min-width: 901px) {
   .caps2 { height: 160vh; }
   .caps2__sticky { top: 15vh; height: 70vh; }
+}
+
+/* ---- Twist the Oreo: a small toy in the contact footer (photos: Unsplash) ---- */
+.contact__grid > div.twist { grid-column: 9 / -1; justify-self: end; align-self: start; margin-top: -40px; text-align: center; width: 240px; }
+.twist__stage { position: relative; height: 220px; perspective: 900px; touch-action: none; cursor: grab; outline: none; }
+.twist__stage:active { cursor: grabbing; }
+.twist__stage:focus-visible { box-shadow: 0 0 0 2px var(--accent); border-radius: 12px; }
+.twist__shadow { position: absolute; left: 50%; bottom: 6px; width: 62%; height: 14px; transform: translateX(-50%); border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0,0,0,.6), rgba(0,0,0,0)); filter: blur(3px); }
+.twist__cookie { position: absolute; left: 50%; top: 50%; width: 150px; aspect-ratio: 1; transform-style: preserve-3d; }
+.twist__half, .twist__cream { position: absolute; inset: 0; transform-style: preserve-3d; }
+.twist__l { position: absolute; inset: 0; border-radius: 50%; backface-visibility: hidden; }
+.twist__l--edge { background: #342c25; backface-visibility: visible;
+  -webkit-mask: repeating-conic-gradient(#000 0 3.2deg, rgba(0,0,0,.82) 3.2deg 6deg); mask: repeating-conic-gradient(#000 0 3.2deg, rgba(0,0,0,.82) 3.2deg 6deg); }
+.twist__l--face { background: #463d33 url(../media/play/face.webp) center/cover no-repeat; }
+.twist__l--back { background: #463d33 url(../media/play/back.webp) center/cover no-repeat; }
+.twist__l--face::after, .twist__l--back::after { content: ""; position: absolute; inset: 0; border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,.10), rgba(0,0,0,0) 45%, rgba(0,0,0,.28) 100%); }
+.twist__l--inner { background: radial-gradient(circle, #3a2e28 0 60%, #2a201b 100%); }
+.twist__cream .twist__l { inset: 4.5%; background: #f1ede4; backface-visibility: visible; }
+.twist__cream .twist__l--top { background: #f1ede4 url(../media/play/cream.webp) center/cover no-repeat; }
+.twist__line { margin: 6px 0 2px; font-weight: 700; letter-spacing: -0.01em; }
+.twist__hint { margin: 0; font-size: 12px; opacity: .55; }
+@media (max-width: 900px) {
+  .contact__grid > div.twist { grid-column: 1 / -1 !important; justify-self: center; text-align: center !important; margin-top: 10px; }
 }

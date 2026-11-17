@@ -554,4 +554,62 @@
   }
   addEventListener('load', ready);
   ready();
+
+  // ---- Twist the Oreo (contact footer): flick to spin like a coin, pull down to twist it open
+  document.querySelectorAll('.twist__stage').forEach(stage => {
+    const cookie = stage.querySelector('.twist__cookie'), shadow = stage.querySelector('.twist__shadow');
+    const T = 7, STEP = 1.2, CREAM = 3;
+    const mk = (cls, z, flip) => { const d = document.createElement('div'); d.className = 'twist__l ' + cls; d.style.transform = `translateZ(${z}px)${flip ? ' rotateY(180deg)' : ''}`; return d; };
+    const wafer = sign => {
+      const h = document.createElement('div'); h.className = 'twist__half';
+      for (let i = 0; i < T; i++) {
+        const outer = i === T - 1, inner = i === 0, z = sign * (CREAM * STEP / 2 + (i + 1) * STEP);
+        const cls = outer ? (sign > 0 ? 'twist__l--face' : 'twist__l--back') : inner ? 'twist__l--inner' : 'twist__l--edge';
+        h.appendChild(mk(cls, z, (outer && sign < 0) || (inner && sign > 0)));
+      }
+      return h;
+    };
+    const front = wafer(1), back = wafer(-1), cream = document.createElement('div'); cream.className = 'twist__cream';
+    for (let i = 0; i < CREAM; i++) cream.appendChild(mk(i === CREAM - 1 ? 'twist__l--top' : '', (i - (CREAM - 1) / 2) * STEP));
+    cookie.append(back, cream, front);
+
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let rotY = -18, velY = 0, open = 0, openVel = 0, drag = false, mode = null, sx = 0, sy = 0, lx = 0, lt = 0, t = 0, running = false, visible = false;
+    const kick = () => { if (!running && visible) { running = true; requestAnimationFrame(frame); } };
+    stage.addEventListener('pointerdown', e => { drag = true; mode = null; stage.setPointerCapture(e.pointerId); sx = lx = e.clientX; sy = e.clientY; lt = performance.now(); velY = 0; kick(); });
+    stage.addEventListener('pointermove', e => {
+      if (!drag) return;
+      const now = performance.now(), dt = Math.max(8, now - lt), dx = e.clientX - lx;
+      if (!mode && Math.hypot(e.clientX - sx, e.clientY - sy) > 6) mode = Math.abs(e.clientY - sy) > Math.abs(e.clientX - sx) * 1.2 && e.clientY > sy ? 'twist' : 'spin';
+      if (mode === 'spin') { rotY += dx * 0.7; velY = dx * 0.7 * (16 / dt); }
+      if (mode === 'twist') open = Math.max(0, Math.min(1, (e.clientY - sy) / 120));
+      lx = e.clientX; lt = now;
+    });
+    const end = () => { if (!drag) return; drag = false; if (mode === null) velY = 22; mode = null; };
+    stage.addEventListener('pointerup', end); stage.addEventListener('pointercancel', end);
+    stage.addEventListener('keydown', e => { if (e.key === ' ' || e.key === 'Enter') { velY = 22; e.preventDefault(); kick(); } });
+    new IntersectionObserver(es => { visible = es[0].isIntersecting; kick(); }).observe(stage);
+
+    function frame() {
+      if (!drag) {
+        velY *= 0.975;
+        const target = Math.round((rotY + 18) / 180) * 180 - 18;
+        if (Math.abs(velY) < 2.2) velY += (target - rotY) * 0.035;
+        rotY += velY;
+        openVel += -open * 0.12; openVel *= 0.72; open += openVel;
+        if (Math.abs(open) < 0.0005 && Math.abs(openVel) < 0.0005) { open = 0; openVel = 0; }
+      }
+      t++;
+      const o = Math.max(0, open), bob = reduce || drag ? 0 : Math.sin(t / 40) * 3;
+      cookie.style.transform = `translate(-50%,-50%) translateY(${bob - 8 * o}px) rotateX(${60 * o}deg) rotateY(${rotY}deg)`;
+      front.style.transform = `translateZ(${52 * o}px) rotateZ(${120 * o}deg)`;
+      cream.style.transform = `scale(${1 + 0.03 * o})`;
+      const lift = Math.abs(Math.sin(rotY * Math.PI / 180));
+      shadow.style.transform = `translateX(-50%) scaleX(${1 - 0.55 * lift * (1 - o) + 0.2 * o})`;
+      // keep animating while visible (idle bob) or while anything is still moving
+      const moving = drag || Math.abs(velY) > 0.01 || Math.abs(rotY - (Math.round((rotY + 18) / 180) * 180 - 18)) > 0.05 || open !== 0;
+      if (visible && (moving || !reduce)) requestAnimationFrame(frame); else running = false;
+    }
+    frame();
+  });
 })();
