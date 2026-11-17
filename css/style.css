@@ -954,3 +954,7 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 @media (max-width: 900px) {
   .contact__grid > div.twist { grid-column: 1 / -1 !important; justify-self: center; text-align: center !important; margin-top: 10px; }
 }
+
+/* award badge above the Mada feature headline */
+.expand__award { position: static; display: inline-flex; margin: 0 0 16px; }
+.expand__copy .expand__award + .eyebrow { display: block; }

@@ -237,7 +237,8 @@ MADA_FEATURE = f'''  <section class="expand expand--b" aria-label="Featured imag
     <div class="expand__sticky">
       <div class="expand__img"><img src="media/mada/mada-01.webp" alt="Mada Biscuit launch posters" loading="lazy"></div>
       <div class="expand__copy" data-dark>
-        <span class="eyebrow">Campaign — Mada · Pikasso d’Or Gold</span>
+        <span class="card__award expand__award"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l2.9 6.2 6.8.8-5 4.6 1.3 6.7L12 17l-6 3.3 1.3-6.7-5-4.6 6.8-.8z"/></svg>Pikasso d’Or Gold</span>
+        <span class="eyebrow">Campaign — Mada</span>
         <p class="expand__title display">This is not<br>a mouse.</p>
         {fx("View the project", tag="button", attrs='data-open="mada"', dark=True)}
       </div>
@@ -349,14 +350,13 @@ page = f'''<!DOCTYPE html>
 {FILM if SHOW_NIVEA else ""}
 
 {PROGRESS_FEATURE if SHOW_BOUNTEOUS else ""}
-{MASARAT_FEATURE}
+{MADA_FEATURE}
 
 
   <section class="brands" aria-label="Clients">
     <div class="brands__sticky">
       <h2 class="brands__title display">Brands I’ve<br>worked with</h2>
       <ul class="brands__grid">{logos}</ul>
-      <p class="brands__note muted">Global names across tech, automotive, FMCG, finance and hospitality.</p>
     </div>
   </section>
 
@@ -365,7 +365,6 @@ page = f'''<!DOCTYPE html>
     <ul class="aw-list">{awards_html}</ul>
   </section>
 
-{MADA_FEATURE}
 {DFIN_FEATURE if SHOW_BOUNTEOUS else ""}
 </main>
 
